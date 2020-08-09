@@ -1,6 +1,6 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/ckrbqja/My-first-project/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+당신은 사용 ㅇㄴ 할 수 있습니다 [GitHub의에 편집기] ( https://github.com/ckrbqja/My-first-project/edit/gh-pages/index.md )를 유지하고 마크 파일에서 귀하의 웹 사이트에 대한 내용을 미리 할 수 있습니다.ㅁㅇㅁㄴㅇㅁㅇㅁㄴㅇㅁㄴㅇㅁ
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
