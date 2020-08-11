@@ -8,13 +8,17 @@
 	<html>
 <head>
 <style>
-.img {
+.imga, .img img {
    transform:scale(1.0);        
    transition: transform .5s; 
 }
 
-.img:hover{
+.imga:hover{
    transform:	scale(1.1);           
+   transition: 	transform .2s;           
+}
+.img img:hover{
+   transform:	scale(1.3);           
    transition: 	transform .2s;           
 }
 </style>
@@ -57,7 +61,7 @@
 
 								<div id="slide" style="width: 350px; height: 250px">
 									<a href="#"><ul>
-											<li class="img"
+											<li class="imga"
 												style="background-repeat:no-repeat;  background-size: 350px 250px; cover; background-image: url('${rentImage[0].rent_url}');">
 											<li>
 										</ul></a>
@@ -389,20 +393,13 @@
 						<h4>옵션 정보</h4>
 					</div>
 					<div class="img">
-						<img
-							src="http://localhost:8082/static/img/icon_가죽시트_${count[0]}.png">
-						<img
-							src="http://localhost:8082/static/img/icon_네비게이션_${count[1]}.png">
-						<img
-							src="http://localhost:8082/static/img/icon_룸미러_${count[2]}.png">
-						<img
-							src="http://localhost:8082/static/img/icon_스마트키_${count[3]}.png">
-						<img
-							src="http://localhost:8082/static/img/icon_썬루프_${count[4]}.png">
-						<img
-							src="http://localhost:8082/static/img/icon_통풍시트_${count[5]}.png">
-						<img
-							src="http://localhost:8082/static/img/icon_후방카메라_${count[6]}.png">
+						<img src="http://localhost:8082/static/img/icon_가죽시트_${count[0]}.png"/></img>
+						<img src="http://localhost:8082/static/img/icon_네비게이션_${count[1]}.png"/></img>
+						<img src="http://localhost:8082/static/img/icon_룸미러_${count[2]}.png"/></img>
+						<img src="http://localhost:8082/static/img/icon_스마트키_${count[3]}.png"/></img>
+						<img src="http://localhost:8082/static/img/icon_썬루프_${count[4]}.png"/></img>
+						<img src="http://localhost:8082/static/img/icon_통풍시트_${count[5]}.png"/></img>
+						<img src="http://localhost:8082/static/img/icon_후방카메라_${count[6]}.png"/></img>
 					</div>
 
 				</article>
