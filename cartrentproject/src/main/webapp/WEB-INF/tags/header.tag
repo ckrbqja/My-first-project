@@ -18,4 +18,3 @@
 <!-- 기타CSS -->
 <link href="http://localhost:8082/static/css/total.css" rel="stylesheet" type="text/css"/>
 <link href="http://localhost:8082/static/css/ksrent.css" rel="stylesheet" type="text/css"/>
-
