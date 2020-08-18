@@ -12,6 +12,7 @@
 <script src="http://localhost:8082/static/js/mainjs.js"></script>
 <link href="http://localhost:8082/static/css/total.css" rel="stylesheet"type="text/css" />
 <link href="http://localhost:8082/static/css/maincs.css" rel="stylesheet"type="text/css" />
+<c:set var="URL" value="${pageContext.request.requestURL}" />
 <style type="text/css">
  .fast-reserve{opacity:0;
     margin-left:-300px;    
@@ -33,13 +34,15 @@
 <script type="text/javascript">
 //윈도우 크기 바뀔 때 마다
 $(document).ready(function(){
-	 $(window).scroll( function(){alert('gd');});
+	
 
 	$('.fast-reserve').animate({'opacity':'1','margin-left':'0px'},1000);
 	$('.white_div').animate({'opacity':'1','margin-left':'0px'},1000);
     $(window).resize(resizeContents);
     resizeContents();
 });
+
+$(window).scroll( function(){alert('gd');});
 
 function resizeContents() {
 	var height = $(window).height();
@@ -76,7 +79,7 @@ function resizeContents() {
                             <div class="shortcut rela">    
                             	<div class="white_div tesla-ovet-event" onclick="location.href='/rent/NewRentList'" >
                             		<ul class="list_ul" style="width: 178px; height: 308px;">
-                            			<li style="margin:0px;">신차 다이렉트</li>
+                            			<li style="margin:0px;">신차 다이렉트 </li>
                             			<li style="margin-right:100px!important">바</li>
                             			<li style="margin:0px;">경제적인 신차구매</li>
                             			<li  style="margin-right: 20px; margin-left: 0px">더 좋은 차를 가지는<br>합리적인 방법!</li>
