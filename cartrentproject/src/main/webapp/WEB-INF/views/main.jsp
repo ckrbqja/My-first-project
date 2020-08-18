@@ -12,9 +12,31 @@
 <script src="http://localhost:8082/static/js/mainjs.js"></script>
 <link href="http://localhost:8082/static/css/total.css" rel="stylesheet"type="text/css" />
 <link href="http://localhost:8082/static/css/maincs.css" rel="stylesheet"type="text/css" />
+<style type="text/css">
+ .fast-reserve{opacity:0;
+    margin-left:-300px;    
+    max-width:100%;
+ }
+</style><style type="text/css">
+ .fast-reserve{opacity:0;
+    margin-left:-300px;    
+    max-width:100%;
+ }
+ 
+ .white_div
+  {
+    opacity:0;
+    margin-left:-300px;    
+    max-width:100%;
+}
+</style>
 <script type="text/javascript">
 //윈도우 크기 바뀔 때 마다
 $(document).ready(function(){
+	 $(window).scroll( function(){alert('gd');});
+
+	$('.fast-reserve').animate({'opacity':'1','margin-left':'0px'},1000);
+	$('.white_div').animate({'opacity':'1','margin-left':'0px'},1000);
     $(window).resize(resizeContents);
     resizeContents();
 });
@@ -28,10 +50,12 @@ function resizeContents() {
     $('#section-1').css("background-size", width+"px "+ height + "px");
     $('#section-2').css("background-size", width+"px "+ height + "px");
     $('#section-3').css("background-size", width+"px "+ height + "px");
-
-	
 }
+
+
+             
 </script>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>렌트의 즐거움! KS렌터카</title>
     <c:set var="URL" value="${pageContext.request.requestURL}" />
@@ -351,14 +375,7 @@ background-size: 500px 300px;
     background-color: #fec401;
     background-image: url(http://localhost:8082/static/img/touch.png);
     background-position: 50% 100%;
-    background-repeat: no-repeat;
-    background-size:15.7%;
-}
-h4{
-color: #FF0000;
-font-size:50px;
-top:10px;
-}
+ 
 h3 {
 color: #2F4F4F;
 font-size:30px;
