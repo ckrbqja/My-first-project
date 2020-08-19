@@ -116,6 +116,7 @@ public class ServiceCenterController {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("moVal"		, moVal);
+		map.put("number"	, number);
 		map.put("moKind"	, moKind);
 		//전체를 조회, 리미트 값 조회 구별하기 위한 식별자
 		map.put("aaaa"		, 1);

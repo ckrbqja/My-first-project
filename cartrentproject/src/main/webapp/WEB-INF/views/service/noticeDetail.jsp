@@ -28,18 +28,10 @@
                 <span class="cl-bold">공지사항</span>
             </div>
         </div>
-        <!-- 페이징 -->
-		<form name="frm" id="frm" action="/rent/custcnte/notice/notice_list.do" method="get">
-        	<input type="hidden" id="pageNo" name="pageNo" value="1">
-        	<input type="hidden" id="rowPerPage" name="rowPerPage" value="10">
-        	<input type="hidden" id="schWord" name="schWord" value="">
-        	<input type="hidden" id="schKind" name="schKind" value="">
-        	<input type="hidden" id="searchBoardSeqNo" name="searchBoardSeqNo" value="">
-        </form>
         <!-- breadcrumbs//end -->
         <div class="view-type v2">
             <div class="view-header">
-                <h4><span class="cl-point1">[${list.a.division}]</span> ${list.a.subject} </h4><!-- 이벤트 카테고리가 지점일 경우 cl-point5, 특별일 경우 cl-point2, 장기렌터카일 경우 cl-point2 -->
+                <h4><span class="cl-point1">[${list.a.division}]</span> ${list.a.subject} </h4>
                 <span class="time">${list.a.reg_date}</span>
             </div>
             
@@ -49,7 +41,7 @@
             
 	                <div class="list" style="height:50px;">
             <c:if test="${list.b != null}">
-	                    <a href="/serviceCenter/noticeDetail/${list.b.no}">
+	                    <a href="/serviceCenter/noticeDetail/${list.b.no}?number=${list.number}&moVal=${list.moVal}&moKind=${list.moKind}">
 	                        <span class="prev">이전글</span>
 	                        <span class="link">		${list.b.subject}</span>
 	                        <span class="time fr">  ${list.b.reg_date}</span>
@@ -67,7 +59,7 @@
                 
 	                <div class="list clearfix"  style="height:50px;">
             <c:if test="${list.c != null}">
-	                    <a href="/serviceCenter/noticeDetail/${list.c.no}">
+	                    <a href="/serviceCenter/noticeDetail/${list.c.no}?number=${list.number}&number=${list.number}&moVal=${list.moVal}&moKind=${list.moKind}">
 	                        <span class="next">다음글</span>
 	                        <span class="link">		${list.c.subject}</span>
 	                        <span class="time fr">  ${list.c.reg_date}</span>
@@ -92,7 +84,7 @@
         		<a href="${path}/serviceCenter/noticeUpdateForm?no=${list.a.no}" class="btn btn-danger btn-fix3 btn-large">수정</a>
         		<a href="${path}/serviceCenter/noticeDelete?no=${list.a.no}" class="btn btn-danger btn-fix3 btn-large">삭제</a>
         	</c:if>
-            <a href="${path}/serviceCenter" style="background-color: #444444; color:white;" class="btn btn-fix3 btn-large">목록</a>
+            <a href="${path}/serviceCenter?number=${list.number}&moVal=${list.moVal}&moKind=${list.moKind}" style="background-color: #444444; color:white;" class="btn btn-fix3 btn-l	arge">목록</a>
         </div>
         <!-- btn-box//end -->
         
