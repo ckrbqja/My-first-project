@@ -12,9 +12,17 @@
 <script src="http://localhost:8082/static/js/mainjs.js"></script>
 <link href="http://localhost:8082/static/css/total.css" rel="stylesheet"type="text/css" />
 <link href="http://localhost:8082/static/css/maincs.css" rel="stylesheet"type="text/css" />
+<style type="text/css">
+	.white_div {
+    opacity:0;
+    margin-left:-300px;    
+    max-width:100%;
+}
+</style>
 <script type="text/javascript">
 //윈도우 크기 바뀔 때 마다
 $(document).ready(function(){
+	$('.white_div').animate({'opacity':'1','margin-left':'0px'},1000);
     $(window).resize(resizeContents);
     resizeContents();
 });
