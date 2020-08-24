@@ -34,7 +34,7 @@
 	<div id="content">
 		<div id="container" style="margin-top:20px;">
 			<div class="breadcrumbs">
-				<h2 class="tit">솔렌트카 상세정보</h2>
+				<h2 class="tit">KS렌트카 상세정보</h2>
 
 				<div class="clearfix">
 					<span>홈</span> <span>중고렌터카</span> <span class="cl-point2">솔렌터카
@@ -146,7 +146,7 @@
 							<div class="estimate-car-prefer__title">전체 차량 판매순위</div>
 							<div class="estimate-car-prefer__data">
 								<p class="estimate-car-prefer__data-desc">
-									<strong class="estimate-car-prefer__data-num" id="abr"></strong>위
+									<strong class="estimate-car-prefer__data-num" id="abr">3</strong>위
 								</p>
 							</div>
 						</div>
@@ -156,7 +156,7 @@
 							<div class="estimate-car-prefer__title">동급 차량 판매순위</div>
 							<div class="estimate-car-prefer__data">
 								<p class="estimate-car-prefer__data-desc">
-									<strong class="estimate-car-prefer__data-num" id=dbr></strong>위
+									<strong class="estimate-car-prefer__data-num" id=dbr>4</strong>위
 								</p>
 							</div>
 						</div>

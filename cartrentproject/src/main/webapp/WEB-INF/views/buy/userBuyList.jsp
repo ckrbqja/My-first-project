@@ -27,21 +27,21 @@
          <div class="tab-menu v1">
             <ul class="unlink tTab" id="reservMenu">
 
-                        	<c:if test="${sessionScope.id == null}">
-            	<li class="col-4 selected">
-                	<a href="/buy/userBuyList?tel=${Buy[0].tel}">구매 리스트</a>
-                </li>
-                <li class="col-4 ">
-                    <a href="/counseling/userList?tel=${Buy[0].tel}">상담 리스트</a>
-                </li>
+               <c:if test="${sessionScope.id == null}">
+	            	<li class="col-4 selected">
+	                	<a href="/buy/userBuyList?tel=${Buy[0].tel}">구매 리스트</a>
+	                </li>
+	                <li class="col-4 ">
+	                    <a href="/counseling/userList?tel=${Buy[0].tel}">상담 리스트</a>
+	                </li>
                 </c:if>
                 <c:if test="${sessionScope.id != null}">
-            	<li class="col-4 selected">
-                	<a href="/buy/userBuyList">구매 리스트</a>
-                </li>
-                <li class="col-4 ">
-                    <a href="/counseling/userList">상담 리스트</a>
-                </li>
+	            	<li class="col-4 selected">
+	                	<a href="/buy/userBuyList">구매 리스트</a>
+	                </li>
+	                <li class="col-4 ">
+	                    <a href="/counseling/userList">상담 리스트</a>
+	                </li>
                 </c:if>
              </ul>
         </div>
@@ -64,14 +64,17 @@
                 </thead>
                 <tbody>
                 <c:forEach items="${Buy}" var="list" varStatus="status">
-                <tr <c:if test="${map[status.index] != '신차'}"> onclick="location.href='/rent/rentListDetail/${list.rent_id}'"</c:if>
-                	<c:if test="${map[status.index] eq '신차'}"> onclick="location.href='/rent/NewRentListDetail/${list.rent_id}'"</c:if>>
-                    <td>${Car[status.index].car_name}</td>
-                    <td>${list.name}</td>
-                    <td><fmt:formatDate value="${list.buy_date}" var="date" pattern="yyyy-MM-dd"/>${date}</td>
-                    <td>${list.month}</td>
-                    <td>${situation[status.index]}</td>
-                </tr>
+                <!-- 개월수가 0이 아닌것들만 -->
+                <c:if test="${list.month != 0}">
+	                <tr <c:if test="${map[status.index] != '신차'}"> onclick="location.href='/rent/rentListDetail/${list.rent_id}'"</c:if>
+	                	<c:if test="${map[status.index] eq '신차'}"> onclick="location.href='/rent/NewRentListDetail/${list.rent_id}'"</c:if>>
+	                    <td>${Car[status.index].car_name}</td>
+	                    <td>${list.name}</td>
+	                    <td><fmt:formatDate value="${list.buy_date}" var="date" pattern="yyyy-MM-dd"/>${date}</td>
+	                    <td>${list.month}</td>
+	                    <td>${situation[status.index]}</td>
+	                </tr>
+                </c:if>
                 </c:forEach>
                 </tbody>
             </table>

@@ -190,21 +190,21 @@
                             <div class="fl col-3">
                             <span class="input essential" id="alert-name">
                                 <strong class="check">필수</strong>
-                                <label><input type="text"  oninput="carPrice(); idCheck();" type="text" placeholder="이름 입력" name="name" class="onlyKorEng" maxlength="20" value="${detail.name}"/></label>
+                                <label><input type="text"  oninput="inputIn(); idCheck();" type="text" placeholder="이름 입력" name="name" class="onlyKorEng" maxlength="20" value="${detail.name}"/></label>
                             </span>
                             <span class="msg-txt cl-point1" id="span-name"></span>
                             </div>
                       		 <div class="fl col-3">
                             <span class="input essential" id="alert-birth">
                              <strong class="check">필수</strong>
-                                <label><input type="text" maxlength="8" oninput="carPrice(); birthCheck();" id="birth" type="text" maxlength="8" placeholder="생년월일(20170101) 입력" class="onlyNumber" name="birthday" value="${detail.date_of_birth}"/></label>
+                                <label><input type="text" maxlength="8" oninput="inputIn(); birthCheck();" id="birth" type="text" maxlength="8" placeholder="생년월일(20170101) 입력" class="onlyNumber" name="birthday" value="${detail.date_of_birth}"/></label>
                             </span>
                             <span class="msg-txt cl-point1" id="span-birth"></span>
                             </div>
                             <div class="fl col-3">
                             <span class="input essential" id="alert-mobile">
                                <strong class="check">필수</strong>
-                                <label><input oninput="carPrice(); telCheck();" maxlength="11" type="text" placeholder="휴대폰번호(-없이 입력) 입력" class="onlyNumber" name="tel"  value="${tel[0]}${tel[1]}${tel[2]}"/></label>
+                                <label><input oninput="inputIn(); telCheck();" maxlength="11" type="text" placeholder="휴대폰번호(-없이 입력) 입력" class="onlyNumber" name="tel"  value="${tel[0]}${tel[1]}${tel[2]}"/></label>
                             </span>
                             <span class="msg-txt cl-point1" id="span-mobile"></span>
                             </div>
@@ -213,14 +213,14 @@
                         	<div class="email-input input-box col-1 maa0" id="alert-email">
                         		<span class="input essential col-3">
                                     <strong class="check">필수</strong>
-                                    <label><input oninput="carPrice(); emailCheck();" type="text" placeholder="이메일 입력" class="checkEmail" name="emailId" id="emailId" value=""  maxlength="30" style="border-right:none;"/></label>
+                                    <label><input oninput="inputIn(); emailCheck();" type="text" placeholder="이메일 입력" class="checkEmail" name="emailId" id="emailId" value=""  maxlength="30" style="border-right:none;"/></label>
                                 </span>
                                 <span class="input hyphen col-3">
                                     <span class="text">@</span>
-                                    <input oninput="carPrice();  emailCheck1();" type="text" placeholder="직접 입력" class="checkEmail" name="domain" id="email1" value=""  maxlength="30"  tabindex="-1" aria-hidden="true"/>
+                                    <input oninput="inputIn();  emailCheck1();" type="text" placeholder="직접 입력" class="checkEmail" name="domain" id="email1" value=""  maxlength="30"  tabindex="-1" aria-hidden="true"/>
                                 </span>
                                 <span class="select-box col-3">
-                                    <select id="email2" class="option01 inputTime" onchange="emailInput(); carPrice(); " tabindex="-1" aria-hidden="true">
+                                    <select id="email2" class="option01 inputTime" onchange="emailInput(); inputIn(); " tabindex="-1" aria-hidden="true">
                                         <option value="">직접 입력</option>
 	                                    	<option value="chol.com">chol.com</option>	
 	                                    	<option value="dreamwiz.com">dreamwiz.com</option>	
@@ -254,14 +254,14 @@
                                 <div class="address-input col-1">
                                     <span class="input-box">
                                         <span class="input">
-                                            <label><input oninput="carPrice();"  type="number" class="readonly" readonly="readonly" placeholder="우편번호 검색"  placeholder="우편번호" name="zipcode" id="zipcode" value="${address[0]}" /></label>
+                                            <label><input oninput="inputIn();"  type="number" class="readonly" readonly="readonly" placeholder="우편번호 검색"  placeholder="우편번호" name="zipcode" id="zipcode" value="${address[0]}" /></label>
                                         </span>
                                         <span class="input essential">
                                    			<strong class="check">필수</strong>
-                                            <label><input oninput="carPrice(); address1Check();"  type="text" class="readonly" readonly="readonly" placeholder="주소 입력" name="address" id="address" value="${address[1]}" /></label>
+                                            <label><input oninput="inputIn(); address1Check();"  type="text" class="readonly" readonly="readonly" placeholder="주소 입력" name="address" id="address" value="${address[1]}" /></label>
                                         </span>
                                         <span class="input" style="width:280px;">
-                                            <label><input oninput="carPrice(); addressCheck();"  type="text" placeholder="나머지 주소 입력"  name="addressDetail" id="addressDetail" maxlength="30" value="${address[2]}" onkeyup="checkingDtlAddr()" /></label>
+                                            <label><input oninput="inputIn(); addressCheck();"  type="text" placeholder="나머지 주소 입력"  name="addressDetail" id="addressDetail" maxlength="30" value="${address[2]}" onkeyup="checkingDtlAddr()" /></label>
                                         </span>
                                         <a href="#none" class="btn btn-color2 btn-fix1 " onclick="daumZipCode();" id="addrSearchBtn" style="margin:0px;width:97; background-color: #f68121;">우편번호</a>
                                     </span><br>

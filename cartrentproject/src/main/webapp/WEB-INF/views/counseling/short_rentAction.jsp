@@ -187,10 +187,22 @@ if(isNaN(dateDiff)){ $('#ddd').html('0');}
 	   $('#reservHp').html($('[name=tel]').val());
 	   $('#reservBirth').html($('#birth').val());
 	   $('#reservEmail').html($('#emailId').val()+email);
-	   
    }
    //시작 시 로딩
    selectCar();
+   
+   //고객 정보 입력 시 반영
+   function inputIn(){
+       var email = "";
+       if($('#email1').val() != "") email = "@"+ $('#email1').val();
+       
+	   $('#sel2_che').html($('#location').val());
+	   $('#sel2_che2').html($('[name=end_location]').val());
+	   $('#reservNm').html($('[name=name]').val());
+	   $('#reservHp').html($('[name=tel]').val());
+	   $('#reservBirth').html($('#birth').val());
+	   $('#reservEmail').html($('#emailId').val()+email);
+   }
 
    //차량선택 메뉴 ajax
    function selectCar(){
@@ -468,7 +480,7 @@ if(ck==false){
 	$('html, body').animate({scrollTop : offset.top-110}, 400);
 	return false;
 }
-if($('[name=name]').val().length < 4){
+if($('[name=name]').val().length < 3){
 	$('[name=name]').css('border-color','#f68121');
 	$('[name=birthday]').css('border-left','1px solid #f68121');
 	$('#span-name').html('이름은 세자리 이상 입력해주세요');
@@ -598,7 +610,7 @@ function idCheck(){
 	if(!isNameCheck($('[name=name]').val())){
 		$('[name=name]').val( $('[name=name]').val().substring(0,$('[name=name]').val().length-1));
 	}
-	if($('[name=name]').val().length < 4){
+	if($('[name=name]').val().length < 3){
 		$('[name=name]').css('border-color','#f68121');
 		$('[name=birthday]').css('border-left','1px solid #f68121');
 		$('#span-name').html('이름은 세자리 이상 입력해주세요');

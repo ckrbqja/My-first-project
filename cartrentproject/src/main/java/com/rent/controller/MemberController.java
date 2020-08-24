@@ -169,7 +169,7 @@ public class MemberController {
 		model.addAttribute("Buy", Buy);
 		model.addAttribute("Car", Car);
 		model.addAttribute("situation", situation);
-		return "/buy/userBuyList";
+		return "redirect:/buy/userBuyList?tel="+Buy.get(0).getTel();
 	}
 
 	/**

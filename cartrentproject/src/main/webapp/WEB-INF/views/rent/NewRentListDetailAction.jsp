@@ -19,7 +19,7 @@ if(!$('input:checkbox[id=term-check-all]').is(':checked')){
 var offset = $("[name=name]").offset();
 $('html, body').animate({scrollTop : offset.top-170}, 400);
 
-if($('[name=name]').val().length < 4){
+if($('[name=name]').val().length < 3){
 	$('[name=name]').css('border-color','#f68121');
 	$('[name=birthday]').css('border-left','1px solid #f68121');
 	$('#span-name').html('이름은 세자리 이상 입력해주세요');
@@ -153,7 +153,7 @@ function idCheck(){
 	if(!isNameCheck($('[name=name]').val())){
 		$('[name=name]').val( $('[name=name]').val().substring(0,$('[name=name]').val().length-1));
 	}
-	if($('[name=name]').val().length < 4){
+	if($('[name=name]').val().length < 3){
 		$('[name=name]').css('border-color','#f68121');
 		$('[name=birthday]').css('border-left','1px solid #f68121');
 		$('#span-name').html('이름은 세자리 이상 입력해주세요');

@@ -84,7 +84,7 @@
         		<a href="${path}/serviceCenter/noticeUpdateForm?no=${list.a.no}" class="btn btn-danger btn-fix3 btn-large">수정</a>
         		<a href="${path}/serviceCenter/noticeDelete?no=${list.a.no}" class="btn btn-danger btn-fix3 btn-large">삭제</a>
         	</c:if>
-            <a href="${path}/serviceCenter?number=${list.number}&moVal=${list.moVal}&moKind=${list.moKind}" style="background-color: #444444; color:white;" class="btn btn-fix3 btn-l	arge">목록</a>
+            <a href="${path}/serviceCenter?number=${list.number}&moVal=${list.moVal}&moKind=${list.moKind}" style="font-size:18px; height:50px; background-color: #444444; color:white;" class="btn btn-fix3 btn-l	arge">목록</a>
         </div>
         <!-- btn-box//end -->
         

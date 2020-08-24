@@ -463,7 +463,7 @@ public class BuyController {
 			}
 				
 		}
-		System.out.println(map);
+
 		model.addAttribute("map", map);
 		model.addAttribute("Buy", buyList);
 		model.addAttribute("Car", Car);
