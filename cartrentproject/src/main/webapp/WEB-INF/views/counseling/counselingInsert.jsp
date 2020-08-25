@@ -85,7 +85,6 @@
 				<div><p id="telput" style="color:red;"></p></div>
 			</div>
 			<div class="input-row clearfix brt0 pat0">
-				<!-- DB에 안들어가는데 있어서 해봄 -->
 				<div class="fl">
 					<div class="counsel-email-input input-box">
 						<span class="input essential col-3">
