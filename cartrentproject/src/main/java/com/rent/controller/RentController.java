@@ -249,10 +249,7 @@ public class RentController {
 		//판매 순위 구하기
 		//값이 없을경우 오류로인해  String으로 받는다
 		String rank  = buyService.getrank(rent_id);
-		//Null이 아닐경우 소수점으로 나눠오기때문에 스플릿으로 나눈다
-		if(rank != null) rank =  rank.split("\\.")[0];
-		model.addAttribute("rank", rank);
-		System.out.println(rank);
+		
 		//판매순위 (차량 종류 별)
 		//두개의 값을 넘겨야 되므로 맵으로 넘긴다
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -260,8 +257,12 @@ public class RentController {
 		map.put("car_kind", carService.carDetail(Integer.toString(rent.getCar_id())).getCar_kind());
 		
 		String KRank = buyService.getKindRank(map);
+		
+		
 		//Null이 아닐경우 소수점으로 나눠오기때문에 스플릿으로 나눈다
 		if(KRank != null) KRank =  KRank.split("\\.")[0];
+		if(rank != null) rank =  rank.split("\\.")[0];
+		model.addAttribute("rank", rank);
 		model.addAttribute("KRank", KRank);
 		
 		return "/rent/rentListDetail";
