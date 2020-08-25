@@ -149,8 +149,8 @@ public class BuyController {
 			System.out.println("상담 "+i+"개 : " + counseling);
 			num +=1;
 		}
-		
-		if(counseling != null) {
+		//if(counseling != null) {
+		if(!counseling.isEmpty()) {
 			buy.setCounseling_date(counseling.get(num).getCounseling_date());
 		}else {
 			SimpleDateFormat format1 = new SimpleDateFormat ("yyyy-MM-dd");
@@ -183,7 +183,7 @@ public class BuyController {
 		carService.carNumberAdding(car);
 		buyService.rentBuyInsert(buy);
 		
-		return "redirect:/rent/rentList";
+		return "redirect:/buy/userBuyList";
 	}
 	
 	/**
