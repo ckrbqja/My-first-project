@@ -1,7 +1,4 @@
 $(document).ready(function(){
-	
-	
-	carKind();
 	selectCar();
 	//시간차를둬야 가능
 	setTimeout(function() {searchForm();}, 60);
@@ -146,7 +143,7 @@ function searchForm(click){
 	});
 }
 
-//더보기 버튼 클릭 시 
+//더보기 버튼 클릭 시 화면보여줌
 function more(count){
 	$('[name=limit]').val(count-1);
 	searchForm('click');
