@@ -3,7 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="layoutTag" tagdir="/WEB-INF/tags" %>
 <script type="text/javascript">
-
 //날짜에 따른 시간 변경 
 //금일일시 현재시간 + 1
 //시작날짜 마지막날짜가 같을 시 마지막시간을 시작시간 + 1로 맞춘다
@@ -291,8 +290,9 @@ if(isNaN(dateDiff)){ $('#ddd').html('0');}
 				
 		
 				$('#selectCar').html(str);
-				
+				selectMenu(0);
 				carPrice();
+				
 			}
 		});
     }
@@ -712,5 +712,16 @@ function addressCheck(){
 	
 }
 
+
+var ckk = '${carKind}';
+if(ckk == '전체') 	ckk = 0;
+if(ckk == '소형') 	ckk = 1;
+if(ckk == '중형') 	ckk = 2;
+if(ckk == 'RV') 	ckk = 5;
+if(ckk == '대형') 	ckk = 4;
+if(ckk == '준중형') 	ckk = 3;
+if(ckk == '친환경차') 	ckk = 6;
+//시간차를 둬야 실행된다 차량 종류에 따라 선택되어 로딩되게하기
+if(ckk != "") {setTimeout(function() {selectMenu(ckk);}, 200);}
 
 </script>

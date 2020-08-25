@@ -11,6 +11,8 @@
 <title>상세정보</title>
 <head>
 <style>
+#container{margin-top:40px!important;}
+header img {margin-top:0px;}
 @-webkit-keyframes sparkle {
   from {
     background-position: 0% 100%;
@@ -342,8 +344,8 @@
 				</article>
 				
 				<div class="btn-box text-c">
-					<button type="submit" class="btn btn-color1 btn-large btn-fix3 m-link sm-link_padding-all sm-link5">
-						<span>예약완료</span>
+					<button type="submit" class="btn btn-color2 btn-large btn-fix3 m-link sm-link_padding-all sm-link5">
+						<span>구매완료</span>
 					</button>
 				</div>
 				
