@@ -12,7 +12,7 @@ $(document).ready(function(){
 	$("#ex4").slider({});  //차량등록
 
 });
-//숫자 세자리 , 찍는 정규식
+//숫자 세자리 콤마 찍는 정규식
 function numberFormat(inputNumber) {
 	   return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
