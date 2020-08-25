@@ -237,7 +237,6 @@ header img {margin-top:0px;}
 											<div class="estimate-list__label">
 												<p class="estimate-list__label-title">계약기간</p>
 											</div>
-											<!-- estimate-list__label//end -->
 											<div class="estimate-list__item">
 												<div class="estimate-item__caption clearfix">
 													<p class="estimate-item__caption-text fl" id="monthShow">${month}개월</p>
