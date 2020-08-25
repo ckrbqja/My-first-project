@@ -715,11 +715,12 @@ function addressCheck(){
 
 var ckk = '${carKind}';
 if(ckk == '전체') 	ckk = 0;
+if(ckk == '차량 선택') ckk = 0;
 if(ckk == '소형') 	ckk = 1;
 if(ckk == '중형') 	ckk = 2;
-if(ckk == 'RV') 	ckk = 5;
-if(ckk == '대형') 	ckk = 4;
 if(ckk == '준중형') 	ckk = 3;
+if(ckk == '대형') 	ckk = 4;
+if(ckk == 'RV') 	ckk = 5;
 if(ckk == '친환경차') 	ckk = 6;
 //시간차를 둬야 실행된다 차량 종류에 따라 선택되어 로딩되게하기
 if(ckk != "") {setTimeout(function() {selectMenu(ckk);}, 200);}
