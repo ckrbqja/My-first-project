@@ -183,7 +183,8 @@ public class BuyController {
 		carService.carNumberAdding(car);
 		buyService.rentBuyInsert(buy);
 		
-		return "redirect:/buy/userBuyList";
+		
+		return "redirect:/buy/userBuyList?tel"+memService.memberDetail(id).getTel();
 	}
 	
 	/**
