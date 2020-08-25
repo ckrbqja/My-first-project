@@ -155,4 +155,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
 		delete from buy
 		where id = #{id}
 	</delete>
+	
+	<!-- 렌트 아이디로 랭크 구하기 -->
+	<select id="getrank" parameterType="String" resultType="String">
+	select ifnull(b.rank,0)
+	from 
+	(SELECT a.rent_id, count(a.rent_id) count, @rownum := @rownum+1 AS rank
+	FROM   
+	(SELECT rent_id, count(rent_id) count
+	FROM   buy
+	group by rent_id
+	order by count desc) as a,  (SELECT @rownum :=0) AS R
+	group by rent_id
+	order by rank) b
+	where rent_id = #{rent_id};
+	</select>
+	
+	<!-- 차량 종류별 랭크 구하기 -->
+	<select id="getKindRank" parameterType="hashMap" resultType="String">
+	select ifnull(b.rank,0)
+	from 
+	(SELECT a.rent_id, count(a.rent_id) count, @rownum := @rownum+1 AS rank
+	FROM   
+	(SELECT q.rent_id, e.car_kind, count(q.rent_id) count
+	FROM   buy q, rent w, car e
+	where q.rent_id = w.rent_id
+	and   w.car_id = e.car_id
+	and   car_kind = #{car_kind}
+	group by q.rent_id
+	order by count desc) as a,  (SELECT @rownum :=0) AS R
+	group by rent_id
+	order by rank) b
+	where rent_id = #{rent_id};
+	</select>
 </mapper>

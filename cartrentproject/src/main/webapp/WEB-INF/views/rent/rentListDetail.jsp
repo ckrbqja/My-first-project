@@ -124,7 +124,7 @@
 			<div class="estimate-search-list__information">
 				<div class="tab-menu v8 js-tab-opener2">
 					<ul class="tab-menu__listbox">
-						<li class="preference tab-menu__list col-6"><a
+						<li class="preference tab-menu__list col-6 pre"><a
 							href="#tab-prefer-information1" class="tab-menu__anchor preference"
 							onclick="btnSlide('preference');">차량선호도</a></li>
 						<c:if test="${sessionScope.id != null}">
@@ -146,7 +146,7 @@
 							<div class="estimate-car-prefer__title">전체 차량 판매순위</div>
 							<div class="estimate-car-prefer__data">
 								<p class="estimate-car-prefer__data-desc">
-									<strong class="estimate-car-prefer__data-num" id="abr">3</strong>위
+									<strong class="estimate-car-prefer__data-num" id="abr">${rank}</strong>위
 								</p>
 							</div>
 						</div>
@@ -156,7 +156,7 @@
 							<div class="estimate-car-prefer__title">동급 차량 판매순위</div>
 							<div class="estimate-car-prefer__data">
 								<p class="estimate-car-prefer__data-desc">
-									<strong class="estimate-car-prefer__data-num" id=dbr>4</strong>위
+									<strong class="estimate-car-prefer__data-num" id=dbr>${KRank}</strong>위
 								</p>
 							</div>
 						</div>
@@ -570,38 +570,22 @@
 
 												<script type="text/javascript">
 													var a = false;
-													$('.modal-close')
-															.click(
-																	function() {
-																		$(
-																				'.modal-pop')
-																				.css(
-																						'display',
-																						'none');
+													$('.modal-close').click(function() {
+																		$('.modal-pop').css('display','none');
 																	});
 
-													$('#slide')
-															.click(
-																	function() {
-																		$(
-																				'.modal-pop')
-																				.css(
-																						'display',
-																						'block');
+													$('#slide').click(function() {
+																		$('.modal-pop').css('display','block');
 																	});
 
 													var img = '${rentImage[0].rent_url}';
 													var img1 = '${rentImage[1].rent_url}';
 													function gly() {
 														if (a == false) {
-															$('#cimg')
-																	.html(
-																			'<img src="'+ img1 +'" width="640" height="480">');
+															$('#cimg').html('<img src="'+ img1 +'" width="640" height="480">');
 															a = true;
 														} else {
-															$('#cimg')
-																	.html(
-																			'<img src="'+ img +'" width="640" height="480">');
+															$('#cimg').html('<img src="'+ img +'" width="640" height="480">');
 															a = false;
 														}
 													}
@@ -695,6 +679,7 @@ function driving(e) {
 }
 </script>
 	<script>
+		//차량선호도, 상품 문의 테두리 CSS && 숨김 보이기
 		function btnSlide(id) {
 			//if		($('#'+id).is(":visible")) $('#'+id).slideUp(); 슬라이드 효과
 			//else  	$('#'+id).slideDown();
@@ -702,18 +687,24 @@ function driving(e) {
 				$('.product').css("border", ""); $('.preference').css("border", "");
 				$('#' + id).hide();
 				$('.' + id).removeClass("selected");
-				if (id == 'preference')
+				if (id == 'preference'){
 					$('.product').css("border-bottom", "");
-				if (id == 'product')
+				}
+				if (id == 'product'){
 					$('.preference').css("border-bottom", "");
+				}
 			} else {
 				$('.product').css("border", ""); $('.preference').css("border", "");
 				$('#' + id).show();
-				$('.' + id).addClass("selected");
 				if (id == 'preference')
-					$('.product').css("border-bottom", "1px solid red");
-				if (id == 'product')
-					$('.preference').css("border-bottom", "1px solid red");
+					$('.pre').attr("style", "border:1.5px red solid");
+					$('.pre').css("border-bottom", "0px");
+					$('.product').attr("style", "border-bottom:1.5px red solid");
+				if (id == 'product'){
+					$('.product').attr("style", "border:1.5px red solid");
+					$('.product').css("border-bottom", "0px");
+					$('.pre').attr("style", "border-bottom:1.5px red solid");
+				}
 			}
 
 			if (id == "product") {
@@ -729,6 +720,7 @@ function driving(e) {
 			}
 		}
 
+		//세자리 숫자 정규식
 		function numberWithCommas(x) {
 			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		}

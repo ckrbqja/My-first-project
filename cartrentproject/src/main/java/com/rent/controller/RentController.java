@@ -186,14 +186,13 @@ public class RentController {
 		List<OptionCarVO> list = opService.optionDetail(rent_id);
 		for(int i = 0; list.size() > i ; i++) {
 			OptionCarVO List = list.get(i);
-			
-			if(List.getOption_name().equals("가죽시트")) 	onOff[0] = "on";
-			if(List.getOption_name().equals("네비게이션")) 	onOff[1] = "on";
-			if(List.getOption_name().equals("ECM룸미러")) 	onOff[2] = "on";
-			if(List.getOption_name().equals("스마트키")) 	onOff[3] = "on";
-			if(List.getOption_name().equals("썬루프")) 		onOff[4] = "on";
-			if(List.getOption_name().equals("통풍시트")) 	onOff[5] = "on";
+			if(List.getOption_name().equals("ECM룸미러")) onOff[2] = "on";
 			if(List.getOption_name().equals("후방카메라")) 	onOff[6] = "on";
+			if(List.getOption_name().equals("네비게이션")) 	onOff[1] = "on";
+			if(List.getOption_name().equals("가죽시트")) 	onOff[0] = "on";
+			if(List.getOption_name().equals("스마트키")) 	onOff[3] = "on";
+			if(List.getOption_name().equals("통풍시트")) 	onOff[5] = "on";
+			if(List.getOption_name().equals("썬루프")) 	onOff[4] = "on";
 		}
 		model.addAttribute("rent"   	, rent);
 		model.addAttribute("car"    	, carService.carDetail(Integer.toString(rent.getCar_id())));
@@ -214,75 +213,62 @@ public class RentController {
 			String gender = buyService.memberInformation(id).getGender();
 			
 			
-			//나이   mysql에서 소수점 제거해도 소수점 나옴 그래서 substring 써야함
+			//나이   mysql에서 소수점 제거해도 소수점 나옴 substring 사용
 			int age = Integer.parseInt(buyService.memberInformation(id).getDate_of_birth().substring(0, 2));
 			
-			System.out.println("======================================");
 			//id에 해당하는 성별을 추출해서 preferenceVO에 해당 정보에 1씩 더한다 (성별)
-			if(gender.equals("남자")) {
-				preference.setMan(preference.getMan()+1);
-				System.out.println("pre Man : "+preference.getMan());;
-			}else {
-				preference.setWomen(preference.getWomen()+1);
-				System.out.println("pre Women : "+preference.getWomen());
-			}
+			if(gender.equals("남자"))  	preference.setMan(preference.getMan()+1);
+			else  						preference.setWomen(preference.getWomen()+1);
+			
 			//id에 해당하는 정보를 추출해서 preferenceVO에 해당 정보에 1씩 더한다 (나이)
-			if(age >=60) {
-				preference.setSixties(preference.getSixties()+1);
-				System.out.println("60대 "+age);
-			}else if(age >=50) {
-				preference.setFifteen(preference.getFifteen()+1);
-				System.out.println("50대 "+age);
-			}else if(age >=40) {
-				preference.setForties(preference.getForties()+1);
-				System.out.println("40대 "+age);
-			}else if(age >=30) {
-				preference.setThirties(preference.getThirties()+1);
-				System.out.println("30대 "+age);
-			}else if(age >=20) {
-				preference.setTwenties(preference.getTwenties()+1);
-				System.out.println("20대 "+age);
-			}else{
-				System.out.println("나가");
-			}
+			if	   (age >=60)  	preference.setSixties (preference.getSixties()+1);
+			else if(age >=50)  	preference.setFifteen (preference.getFifteen()+1);
+			else if(age >=40)  	preference.setForties (preference.getForties()+1);
+			else if(age >=30)  	preference.setThirties(preference.getThirties()+1);
+			else if(age >=20)  	preference.setTwenties(preference.getTwenties()+1);
+			else 				System.out.println("회원가입 오류");
+			
 			//정보를 추출했으니 총인원수에 +1한다.
 			preference.setTotal(preference.getTotal()+1);
-			
-			System.out.println("아이디 : "+id);
-			System.out.println("나이 : "+ age);
-			System.out.println("성별 : "+ gender);
-			System.out.println();
-			
 		}
-		System.out.println("남자 : "+preference.getMan());
-		System.out.println("여자 : "+preference.getWomen());
-		System.out.println("총인원수 : "+preference.getTotal());
-		System.out.println("20대수 : "+preference.getTwenties());
-		System.out.println("30대수 : "+preference.getThirties());
-		System.out.println("40대수 : "+preference.getForties());
-		System.out.println("50대수 : "+preference.getFifteen());
-		System.out.println("60대수 : "+preference.getSixties());
-		System.out.println("buyIdList.size() : "+ buyIdList.size());
 		int percent;
 		//차를 구매했던 사람이 없으면 0값을 넣어 0을 나누지 못하게한다. 오류방지
-		if(buyIdList.size() == 0) {
-			percent = 0;
-		}else {
-			percent = 100 / preference.getTotal();
-		}
+		if		(buyIdList.size() == 0) percent = 0; 
+		else 	percent = 100 / preference.getTotal();
 		
-		preference.setMan(percent * preference.getMan());
-		preference.setWomen(percent * preference.getWomen());
-		preference.setTwenties(percent * preference.getTwenties());
-		preference.setThirties(percent * preference.getThirties());
-		preference.setForties(percent * preference.getForties());
-		preference.setFifteen(percent * preference.getFifteen());
-		preference.setSixties(percent * preference.getSixties());
-		
+		preference.setMan		(percent * preference.getMan());
+		preference.setWomen		(percent * preference.getWomen());
+		preference.setTwenties	(percent * preference.getTwenties());
+		preference.setThirties	(percent * preference.getThirties());
+		preference.setForties	(percent * preference.getForties());
+		preference.setFifteen	(percent * preference.getFifteen());
+		preference.setSixties	(percent * preference.getSixties());
+			
 		model.addAttribute("preference", preference);
+		
+		//판매 순위 구하기
+		//값이 없을경우 오류로인해  String으로 받는다
+		String rank  = buyService.getrank(rent_id);
+		//Null이 아닐경우 소수점으로 나눠오기때문에 스플릿으로 나눈다
+		if(rank != null) rank =  rank.split("\\.")[0];
+		model.addAttribute("rank", rank);
+		System.out.println(rank);
+		//판매순위 (차량 종류 별)
+		//두개의 값을 넘겨야 되므로 맵으로 넘긴다
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("rent_id",  rent_id);
+		map.put("car_kind", carService.carDetail(Integer.toString(rent.getCar_id())).getCar_kind());
+		
+		String KRank = buyService.getKindRank(map);
+		//Null이 아닐경우 소수점으로 나눠오기때문에 스플릿으로 나눈다
+		if(KRank != null) KRank =  KRank.split("\\.")[0];
+		model.addAttribute("KRank", KRank);
 		
 		return "/rent/rentListDetail";
 	}
+	
+	
+	
 	
 	@RequestMapping("/main.do")
 	public String main(Model model) throws Exception{

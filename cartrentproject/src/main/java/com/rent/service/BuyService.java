@@ -2,6 +2,7 @@ package com.rent.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -90,5 +91,14 @@ public class BuyService {
 	//회원탈퇴시 해당아이디에 대한 구매한 정보들을 전부 삭제한다 
 	public int secessionDelete(String id) throws Exception {
 		return mapper.secessionDelete(id);
+	}
+	//차량 순위 매기기
+	public String getrank(String rent_id)  throws Exception{
+		return mapper.getrank(rent_id);
+	}
+	
+	//차량 종류별 순위
+	public String getKindRank(Map<String, Object> rent_id)  throws Exception{
+		return mapper.getKindRank(rent_id);
 	}
 }

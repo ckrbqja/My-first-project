@@ -2,6 +2,7 @@ package com.rent.mapper;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -56,5 +57,10 @@ public interface BuyMapper {
 	
 	//회원탈퇴시 해당아이디에 대한 구매한 정보들을 전부 삭제한다 
 	public int secessionDelete(String id) throws Exception;
+	
+	//렌트 랭크 구하기
+	public String getrank(String rent_id)  throws Exception;
 		
+	//차량종류별 랭크 구하기
+	public String getKindRank(Map<String, Object> rent_id)  throws Exception;
 }
