@@ -194,7 +194,7 @@ function todayCheck(){
 function changeHour(){
 	//시작날짜와 마지막 날짜가 같을 시
 	if($('#startDate').val() == $('#endDate').val()){
-	   	///마지막 시간을 시작시간+1로 바꾼다
+	   	//마지막 시간을 시작시간+1로 바꾼다
 	   	var hour = Number($('#sHour').val())+1;
 	   	var str  = '';
 	   	for(i = hour; i < 23; i++ ){

@@ -34,11 +34,7 @@
 		        
 	        <div class="accordion-type">
 					
-					<!-- a1 a2...선택시 selected 와 block를 넣어주기 위한 class 이름 -->
-					<!-- p1 p2... 페이징을 위한 class 이름 -->  
-					
-					<!-- 1111111111111111111111111111111111111111111111111111111111111 -->      	        
-		            <div class="list a1"> <!-- 선택되면 list 옆에 selected <-생김 -->
+		            <div class="list a1"> 
 		            
 		            <!-- 페이징 1 제목 -->
 		                <div class="subject p1">
