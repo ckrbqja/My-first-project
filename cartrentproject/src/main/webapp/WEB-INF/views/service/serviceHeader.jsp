@@ -11,8 +11,8 @@ $(window).scroll(function () {
 	if(scrollValue != 0) {
 		$('.extend').addClass('fixed');
 		$('.serviceHide').removeClass('header-placeholder');
-		$('.serviceLong').css({left : "300px"});
-		$('.serviceShort').css({left : "-400px"});
+		$('.serviceLong').css({left : "auto"});    $('.serviceLong').css({right : "440px"}); 
+		$('.serviceShort').css({left : "-420px"}); $('.serviceShort').css({right : "auto"});  
 		$('.gnb-listbox').css({"background-color" : "#f5f5f5"});
 		$('#logoImg').attr('style', 'margin-top:-20px;');
 	}else { //스크롤 맨위 (0)
