@@ -86,7 +86,6 @@
 			</div>
 			<!-- car-list//end -->
 			
-			<!-- 190103 아코디언 메뉴 추가  -->
 						<div class="estimate-search-list__information">
 							<div class="tab-menu v8 js-tab-opener2">
 								<ul class="tab-menu__listbox">
