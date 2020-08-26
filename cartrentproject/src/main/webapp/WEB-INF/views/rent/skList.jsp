@@ -12,6 +12,12 @@
 header img{margin-top:0px;}
 .container { width: 1030px;  }
 	
+.fadeinleft {
+    opacity:0;
+    margin-left:-300px;    
+    max-width:100%;
+}
+ 
 #moreBtn {
 	margin-top: 30px;
 	background-color: #f5f5f5;
