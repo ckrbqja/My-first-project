@@ -29,7 +29,7 @@
 </head>
 <body>
 <div id="content">
-    <div id="container">
+    <div id="container" style="margin-top:80px;">
         <div class="breadcrumbs">
             <h2 class="tit	">공지사항</h2>
             <div class="clearfix">
