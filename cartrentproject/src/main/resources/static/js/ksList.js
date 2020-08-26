@@ -149,7 +149,14 @@ function more(count){
 	searchForm('click');
 }
 
-
+//무한스크롤
+$(window).scroll(
+		function() {
+			var windowHeight = $(window).height() - window.innerHeight;
+			var scrollValue = $(document).scrollTop()+10;
+			var bTemp = $('#buTemp').val();
+			if(windowHeight < scrollValue) more(bTemp);
+});
 
 
 		

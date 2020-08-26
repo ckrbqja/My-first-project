@@ -164,7 +164,7 @@ function searchForm(click){
 			});
 				if(data.count > 1 ){
 				str+= '</div><br><br><div class="col-sm-12" style="padding:0px;">';
-				str+= '<button class="col-sm-12 btn" id="moreBtn" type="button" onclick="more('+ data.count +');">더보기&nbsp;<span class="glyphicon glyphicon-menu-down"></span></button></div>';
+				str+= '<input id="buTemp" class="hidden" value="'+data.count+'"><button class="col-sm-12 btn" id="moreBtn" type="button" onclick="more('+ data.count +');">더보기&nbsp;<span class="glyphicon glyphicon-menu-down"></span></button></div>';
 				}
 				
 				$('#total').html('(총 '+data.total+'건)');
@@ -205,6 +205,16 @@ $(window).scroll(
 		$('html, body').animate({scrollTop : 0}, 400);
 		return false;
 	});
+	
+	
+//무한스크롤
+$(window).scroll(
+		function() {
+			var windowHeight = $(window).height() - window.innerHeight;
+			var scrollValue = $(document).scrollTop()+10;
+			var bTemp = $('#buTemp').val();
+			if(windowHeight < scrollValue) more(bTemp);
+});
 </script>
 
 </html>

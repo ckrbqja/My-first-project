@@ -338,17 +338,6 @@ $('#toptop').click(function() {
 	return false;
 });
 
-$(window).scroll(
-		function() {
-			var windowHeight = $(window).height() - window.innerHeight;
-			var scrollValue = $(document).scrollTop()+10;
-			var bTemp = $('#buTemp').val();
-			console.log("a" + windowHeight);
-			console.log("b" + scrollValue);
-			if(windowHeight < scrollValue)
-				more(bTemp);
-			
-		});
 </script>
 </html>
 </layoutTag:layout>
