@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="content" >
-<div class="container" style="margin-top:40px;">
+<div class="container" style="margin-top:90px;">
             <div>
                 <h3>QNA 등록</h3>
             </div>
