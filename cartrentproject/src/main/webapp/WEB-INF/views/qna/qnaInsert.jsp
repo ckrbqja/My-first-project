@@ -14,7 +14,8 @@
 <title>QNA 작성 페이지</title>
 </head>
 <body>
-<div class="col-sm-9 col-lg-9">
+<div id="content" >
+<div class="container" style="margin-top:40px;">
             <div>
                 <h3>QNA 등록</h3>
             </div>
@@ -24,24 +25,24 @@
                     <form class="bs-example form-horizontal" action="${path}/qna/insertProc" method="post">
                         <fieldset>
                        		<div class="form-group">
-								<label class="col-lg-2 control-label">작성자</label>
-								 <div class="col-lg-10">
+								<label class=" control-label">작성자</label>
+								 <div class="">
 									<input type="text" class="form-control" id="writer" name="writer" placeholder="이름을 입력하십시오.">
 								 </div>
 							</div>
                         
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">제목</label>
+                                <label class=" control-label">제목</label>
 
-                                <div class="col-lg-10">
+                                <div class="">
                                     <input type="text" class="form-control" id="subject" name="subject" placeholder="제목을 입력하십시오.">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">내용</label>
+                                <label class=" control-label">내용</label>
 
-                                <div class="col-lg-10">
+                                <div class="">
                                     <textarea class="form-control" rows="3" id="content" name="content" placeholder="내용을 입력하십시오."></textarea>
                                 </div>
                             </div>
@@ -54,9 +55,9 @@
 								</div>
 							</div>
 							
-                                <label class="col-lg-2 control-label">비밀글</label>
+                                <label class=" control-label">비밀글</label>
 
-                                <div class="col-lg-10">
+                                <div class="">
 
                                     <div class="checkbox">
                                         <input type="checkbox" id="select-terms3" class="check_yn">
@@ -66,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-lg-10 col-lg-offset-2">
+                                <div class=" ">
                                     <button type="submit" class="btn btn-primary">확인</button>
                                     <button type="reset" class="btn btn-default">취소</button>
                                 </div>
@@ -76,7 +77,7 @@
                     <a href="${path}/qna/list" class="btn btn-danger">목록가기</a>
                 </div>
             </div>
-            
+            </div>
         </div>
 </body>
 <script>

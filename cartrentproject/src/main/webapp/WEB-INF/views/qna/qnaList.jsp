@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+body{margin-top:170px !important;}
+</style>
 <%@ include file="../service/serviceHeader.jsp" %>
 <link href="http://localhost:8082/static/css/ss.css" rel="stylesheet" type="text/css" >
 <meta charset="UTF-8">
