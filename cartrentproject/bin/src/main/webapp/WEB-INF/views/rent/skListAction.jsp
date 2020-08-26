@@ -101,7 +101,7 @@ function searchForm(click){
 			});
 				if(data.count > 1 ){
 				str+= '</div><br><br><div class="col-sm-12">';
-				str+= '<button class="col-sm-12 btn" id="moreBtn" type="button" onclick="more('+ data.count +');">더보기&nbsp;<span class="glyphicon glyphicon-menu-down"></span></button></div>';
+				str+= '<input class="" id="buTemp" value="'+ data.count +'"><button class="col-sm-12 btn" id="moreBtn" type="button" onclick="more('+ data.count +');">더보기&nbsp;<span class="glyphicon glyphicon-menu-down"></span></button></div>';
 				}
 				
 				$('#total').html('검색결과 (총 '+data.total+'건)');
@@ -116,7 +116,10 @@ function more(count){
 	searchForm('click');
 }
 
-							
+			
+
+
+//footerSHeight값 이상일시 class를 바꾼다
 </script>
 
 

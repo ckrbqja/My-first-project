@@ -224,6 +224,15 @@ $('#ex4').on('slide',function(data){
 	$( "#reg_date1" ).val(data.value[0]);
 	$( "#reg_date2" ).val(data.value[1]);
 });
+
+$(window).scroll(
+		function() {
+			alert('gd');
+			var windowHeight = $(window).height() - window.innerHeight;
+			var scrollValue = $(document).scrollTop();
+			
+		});
+
 </script>
 
 </html>
