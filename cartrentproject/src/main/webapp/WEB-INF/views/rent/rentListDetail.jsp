@@ -445,7 +445,7 @@
 												<!-- estimate-list__label//end -->
 												<div class="estimate-list__item">
 													<div class="estimate-item__caption clearfix">
-														<p class="estimate-item__caption-text fl" id="monthShow">1개월</p>
+														<p class="estimate-item__caption-text fl" id="monthShow">${mon}개월</p>
 													</div>
 													<!-- estimate-item__caption//end -->
 
@@ -473,7 +473,7 @@
 														onchange="monthShow(this.value);">
 														<c:set value="${rent.max_month}" var="month" />
 														<c:forEach var="i" begin="1" end="${rent.max_month}">
-															<option value="${i}">${i}</option>
+															<option value="${i}" <c:if test="${i eq mon}"> selected </c:if>>${i}</option>
 														</c:forEach>
 													</select>
 												</div>
@@ -510,7 +510,7 @@
 													<div class="estimate-information__detail">
 														<p class="estimate-information__detail-desc"
 															id="cntrTermMm_detail">계약기간 총 주행거리 초과 시 위약금발생</p>
-													</div>
+													</div>	
 													<div class="col-lg-3">
 														<select name="cntrTermMm" class="form-control"
 															onchange="driving(this.value);">
@@ -648,7 +648,6 @@ var temporaryPrice=0;
 function monthShow(e) {
 	$('#monthShow').html(e+"개월");
 	document.getElementById('term').value = e;
-	
 	if(e==1) {
 		$('#totalRental').html(numberWithCommas(cost));
 		$('#span_deposit').html(numberWithCommas(cost*5));
@@ -660,6 +659,9 @@ function monthShow(e) {
 		$('#span_deposit').html(numberWithCommas(temporaryPrice*5));
 	}
 }
+
+setTimeout(function() {monthShow("${mon}");}, 0.5);
+
 function driving(e) {
 	$('#driving').html(e+"만km 이하/년");
 	document.getElementById('km').value = e;

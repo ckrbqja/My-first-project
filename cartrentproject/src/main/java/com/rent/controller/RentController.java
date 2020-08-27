@@ -175,7 +175,7 @@ public class RentController {
 	
 	//차량 리스트 상세정보
 	@RequestMapping("/rentListDetail/{rent_id}")
-	public String rentListDetail(@PathVariable String rent_id, Model model)throws Exception{
+	public String rentListDetail(@PathVariable String rent_id, @RequestParam(defaultValue = "1") String mon  ,Model model)throws Exception{
 		RentVO rent = new RentVO();
 		rent = rentService.rentDetail(rent_id);
 		
@@ -264,6 +264,7 @@ public class RentController {
 		if(rank != null) rank =  rank.split("\\.")[0];
 		model.addAttribute("rank", rank);
 		model.addAttribute("KRank", KRank);
+		model.addAttribute("mon", mon);
 		
 		return "/rent/rentListDetail";
 	}

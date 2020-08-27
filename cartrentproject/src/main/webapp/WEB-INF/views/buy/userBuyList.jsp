@@ -66,7 +66,7 @@
                 <c:forEach items="${Buy}" var="list" varStatus="status">
                 <!-- 개월수가 0이 아닌것들만 -->
                 <c:if test="${list.month != 0}">
-	                <tr <c:if test="${map[status.index] != '신차'}"> onclick="location.href='/rent/rentListDetail/${list.rent_id}'"</c:if>
+	                <tr <c:if test="${map[status.index] != '신차'}"> onclick="location.href='/rent/rentListDetail/${list.rent_id}?mon='+${list.month}"</c:if>
 	                	<c:if test="${map[status.index] eq '신차'}"> onclick="location.href='/rent/NewRentListDetail/${list.rent_id}'"</c:if>>
 	                    <td>${Car[status.index].car_name}</td>
 	                    <td>${list.name}</td>
