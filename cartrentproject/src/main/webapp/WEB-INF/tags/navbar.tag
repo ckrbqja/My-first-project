@@ -149,7 +149,7 @@ input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(3) {bot
 <!-- 퀵메뉴 메인이 아닐 시 보여짐 -->
 <c:if test="${!fn : contains(URL, 'main') and !fn : contains(URL, 'admin') and !fn : contains(URL, 'accident') and !fn : contains(URL, 'buy/list')}">
 <div id="qMenu">
-	<input type="checkbox" id="menuicon" >
+	<input type="checkbox" id="menuicon" onclick="qClick();" >
 <ul class="menuicon">
 	<li>
 		<label for="menuicon">
@@ -157,16 +157,6 @@ input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(3) {bot
 		</label>
 	</li>
 </ul>
-<script type="text/javascript">
-//퀵메뉴 호버
-
-$('#qMenu').hover(function() {
-	$('#menuicon').prop('checked', true);
-		
-	}, function(){
-		$('#menuicon').prop('checked', false);
-});
-</script>
 <div class="sidebar">
 	<div class="quick-menu" style="z-index: 1000 !important; right:-92px;">
 		<ul>
