@@ -41,31 +41,17 @@ header img{margin-top:0px;}
 .select2-selection {
 	height: 60px; 
 }
-.select-box {
-	height: 60px; 
-}
 
-.user_img {
-   transform:scale(1.0);        
-   transition: transform .5s; 
-}
-
-.user_img:hover{
-   transform:	scale(1.1);           
-   transition: 	transform .2s;           
-}
 </style>
 
 <style>
+.select-box {height: 60px;}
+.user_img { transform:scale(1.0);   transition: transform .5s;}
 *{margin:0;padding:0;}
 .thumb {width:auto;overflow:hidden;padding-bottom:56.25%;position:relative;}
-.thumb img {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:100%;transition: .35s ease-in-out;}
-.thumb:before {content:'';display:block;width:100%;height:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.6) url('./img/eye.png') center center no-repeat;transition: .35s ease-in-out;z-index:20;opacity:0;}
-.title {display:inline-block;background-size: 200%;background-position: 0 0;transition: .35s ease-in-out;padding:10px;margin:10px auto;}
 .desc {display:inline;background: linear-gradient(to right, rgba(255,255,255,0) 50%, #f3ca00 50%);background-size: 200%;background-position: 0 0;transition: .35s ease-in-out;font-size:11px;line-height:1.6;color:#666;word-break:keep-all;}
 .textbox:hover .desc {background-position: -100% 0;}
-.textbox:hover .thumb img {max-width:105%;}
-.textbox:hover .thumb:before {opacity:1;}
+.textbox:hover .user_img {   transform:	scale(1.1);   transition: 	transform .2s; }
 </style>
 <head>
 <script src="http://localhost:8082/static/js/bootstrap-slider.js"></script>

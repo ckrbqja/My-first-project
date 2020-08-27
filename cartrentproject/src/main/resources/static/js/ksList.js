@@ -187,24 +187,4 @@ document.addEventListener("scroll", function(){ //스크롤 중인 이벤트
 
 
 
-//퀵메뉴 호버
-$('#qMenu').hover(function() {
-	$('#menuicon').prop('checked', true);
-	$('.menuicon').animate({right: '52px'}, 500, 'swing');
-	$('.quick-menu').animate({right: '0px'}, 500, 'swing');
-	}, function(){
-		$('.menuicon').animate({right: '-50px'}, 500, 'swing');
-		$('.quick-menu').animate({right: '-100px'}, 500, 'swing');
-		$('#menuicon').prop('checked', false);
-});
-
-//클릭시 체크가 없을 경우
-function qClick(){
-	if(!$("input:checkbox[id='menuicon']").is(":checked"))
-		$('.menuicon').animate({right: '-50px'}, 500, 'swing');
-		$('.quick-menu').animate({right: '-100px'}, 500, 'swing');
-		$('#menuicon').prop('checked', false);
-}
-
-
 		

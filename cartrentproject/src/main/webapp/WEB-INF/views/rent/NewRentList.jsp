@@ -17,10 +17,15 @@ header img{margin-top:0px;}
    transition: transform .5s; 
 }
 
-.user_img:hover{
-   transform:	scale(1.1);           
-   transition: 	transform .2s;           
-}
+</style>
+<style>
+.select-box {height: 60px;}
+.user_img { transform:scale(1.0);   transition: transform .5s;}
+*{margin:0;padding:0;}
+.thumb {width:auto;overflow:hidden;padding-bottom:56.25%;position:relative;}
+.desc {display:inline;background: linear-gradient(to right, rgba(255,255,255,0) 50%, #f3ca00 50%);background-size: 200%;background-position: 0 0;transition: .35s ease-in-out;font-size:11px;line-height:1.6;color:#666;word-break:keep-all;}
+.textbox:hover .desc {background-position: -100% 0;}
+.textbox:hover .user_img {   transform:	scale(1.1);   transition: 	transform .2s; }
 </style>
 <head>
  <link href="http://localhost:8082/static/css/total.css" rel="stylesheet" type="text/css"/>
@@ -110,7 +115,7 @@ function searchForm(click){
 		success : function(data){
 			var str = '<div class="result_bigbox" id="result_bigbox_list" style="margin:0px">';
 			$.each(data.rentList, function(key, value){
-				str += '<a href="#"><div class="result_box" onclick="location.href=\'/rent/NewRentListDetail/'+ value.rent_id +'\'">'+
+				str += '<a href="#"><div class="textbox result_box" onclick="location.href=\'/rent/NewRentListDetail/'+ value.rent_id +'\'">'+
 				'<div class="car-list__sticker special">신차</div>'+
 			'<div class="result_box_top ">'+
 					'<div class="result_img user_car">'+
@@ -119,7 +124,7 @@ function searchForm(click){
 					'</div>'+
 				'<div class="result_top_right">'+
 					'<p><span class="hotdeal_sticker top-2">Hot Deal</span>'+ value.manufacturer +'</p>'+
-					'<p style="width: 200px;">'+
+					'<p class="desc" style="width: 200px;">'+
 						value.car_name +'</p>'+
 						'<ul class="sticker_box">'+
 							'<li class="sticker_membership">멤버십</li>'+
