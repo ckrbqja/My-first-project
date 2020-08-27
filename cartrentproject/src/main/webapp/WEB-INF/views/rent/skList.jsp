@@ -9,6 +9,9 @@
 <fmt:formatDate value='${now}' pattern='yyyy' var="now"/>
 <html>
 <style>
+header {transform: initial; position:fixed; }
+header.scrollDown { transform: translate(0, -150px); transition: transform 1s;}
+
 header img{margin-top:0px;}
 .container { width: 1030px;  }
 	
@@ -336,6 +339,35 @@ $(window).scroll(function() {
 $('#toptop').click(function() {
 	$('html, body').animate({scrollTop : 0}, 400);
 	return false;
+});
+
+
+
+//스크롤 내릴시 헤더 가림
+var header = document.querySelector('header');
+var headerMoving = function(direction){
+	
+	
+  if (direction === "up"){
+    header.className = '';
+  } else if (direction === "down"){
+    header.className = 'scrollDown';
+  }
+};
+var prevScrollTop = 0;
+document.addEventListener("scroll", function(){ //스크롤 중인 이벤트
+	var windowHeight = document.querySelector("#total").offsetTop * 100 - 50; // Viewport Height
+	var scrollValue = $(document).scrollTop();	
+	console.log('w ' + windowHeight + ' s ' + scrollValue + "  " +document.querySelector("#total").offsetTop);
+  	var nextScrollTop = window.pageYOffset || 0; 
+  	
+  if (nextScrollTop > prevScrollTop && scrollValue > windowHeight){
+    headerMoving("down"); //스크롤 내리는 중에 실행코드
+  } else if (nextScrollTop < prevScrollTop ){
+    headerMoving("up"); //스크롤 올리는 중에 실행코드
+  }
+  prevScrollTop = nextScrollTop;
+  
 });
 
 </script>
