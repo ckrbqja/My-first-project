@@ -125,7 +125,7 @@
 <c:if test="${!fn : contains(URL, 'main') and !fn : contains(URL, 'admin') and !fn : contains(URL, 'accident') and !fn : contains(URL, 'buy/list')}">
 <div id="qMenu">
 	<input type="checkbox" id="menuicon" onclick="qClick();"  >
-<ul class="menuicon" <c:if test="${fn : contains(URL, 'service') || fn : contains(URL, 'qna')}">style="top:183!important;"</c:if> >
+<ul class="menuicon" <c:if test="${fn : contains(URL, 'service') || fn : contains(URL, 'qna') || fn : contains(URL, 'counseling')}">style="top:183!important;"</c:if> >
 	<li>
 		<label for="menuicon" >
 			<span></span><span></span><span></span>

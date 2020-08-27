@@ -74,16 +74,16 @@ function searchForm(click){
 		success : function(data){
 			var str = '<div class="result_bigbox" id="result_bigbox_list" style="margin:0px">';
 			$.each(data.rentList, function(key, value){
-				str += '<a href="#"><div class="result_box grid-bottom hideme bottom" onclick="location.href=\'/rent/rentListDetail/'+ value.rent_id +'\'">'+
+				str += '<a href="#"><div class="result_box grid-bottom hideme bottom textbox" onclick="location.href=\'/rent/rentListDetail/'+ value.rent_id +'\'">'+
 				'<div class="car-list__sticker joonggo">중고차</div>'+
 			'<div class="result_box_top ">'+
 					'<div class="result_img user_car">'+
-							'<img src="'+value.rent_url+'" alt="기아자동차 2017 K7 2.4 GDI[가솔린] 리미티드" class="user_img">'+
+							'<img src="'+value.rent_url+'"  class="user_img">'+
 						'<span class="car_number">'+ value.car_number +'</span>'+
 					'</div>'+
 				'<div class="result_top_right">'+
 					'<p>'+ value.manufacturer +'</p>'+
-					'<p style="width: 200px;">'+ value.car_name +'</p>'+
+					'<p  class="desc" style="width: 200px;">'+ value.car_name +'</p>'+
 						'<ul class="sticker_box">'+
 							'<li class="sticker_membership">멤버십</li>'+
 						'</ul>'+

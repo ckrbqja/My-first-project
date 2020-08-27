@@ -156,6 +156,7 @@ public class RentController {
 			int count = temp;
 			
 			//더보기 버튼이 처음 눌려지는게 아닐 시 리미트 값을 가져온다
+			if(!list.getLimit().equals("NaN"))
 			if(list.getLimit() != "" ) count = Integer.parseInt(list.getLimit());
 			//총 페이지 수에서 리미트값을 뺀 값에 보여질 아이템 수를 곱한다
 			int Ccount = (temp - count +1) * showCount;
