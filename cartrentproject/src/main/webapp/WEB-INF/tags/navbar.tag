@@ -121,10 +121,54 @@
 <!-- header 끝 -->
 
 
+<style>
+* {padding:0;margin:0;}
+input[id="menuicon"] {display:none;}
+input[id="menuicon"] + ul {    position: fixed;
+    top: 170px;
+    right: -50px;
+    width: 92px;
+    height: 458px;
+    z-index: 999999;
+    box-sizing: border-box;}
+input[id="menuicon"] + ul > li {display:block;width:50px;height:50px;border:1px solid #f1f1f1;position:relative;margin-top:-1px;transition:all .35s;}
+input[id="menuicon"] + ul > li > a {display:block;width:auto;height:50px;overflow:hidden;transition:all .35s;}
+input[id="menuicon"] + ul > li > label {display:block;cursor:pointer;width:auto;height:50px;background:#dadada;}
+input[id="menuicon"] + ul > li:nth-child(1) label span {display:block;position:absolute;width:50%;height:3px;border-radius:30px;background:#333;transition:all .35s;}
+input[id="menuicon"] + ul > li:nth-child(1) label span:nth-child(1) {top:30%;left:50%;transform:translateX(-50%);}
+input[id="menuicon"] + ul > li:nth-child(1) label span:nth-child(2) {top:50%;left:50%;transform:translate(-50%,-50%);}
+input[id="menuicon"] + ul > li:nth-child(1) label span:nth-child(3) {bottom:30%;left:50%;transform:translateX(-50%);}
+input[id="menuicon"]:checked + ul > li:nth-child(1) label {z-index:2;right:300px;}
+input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(1) {top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);}
+input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(2) {opacity:0;}
+input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(3) {bottom:50%;left:50%;transform:translate(-50%,50%) rotate(-45deg);}
+
+</style>
+
 
 <!-- 퀵메뉴 메인이 아닐 시 보여짐 -->
 <c:if test="${!fn : contains(URL, 'main') and !fn : contains(URL, 'admin') and !fn : contains(URL, 'accident') and !fn : contains(URL, 'buy/list')}">
-	<div class="quick-menu" style="z-index: 1000 !important;">
+<div id="qMenu">
+	<input type="checkbox" id="menuicon" >
+<ul class="menuicon">
+	<li>
+		<label for="menuicon">
+			<span></span><span></span><span></span>
+		</label>
+	</li>
+</ul>
+<script type="text/javascript">
+//퀵메뉴 호버
+
+$('#qMenu').hover(function() {
+	$('#menuicon').prop('checked', true);
+		
+	}, function(){
+		$('#menuicon').prop('checked', false);
+});
+</script>
+<div class="sidebar">
+	<div class="quick-menu" style="z-index: 1000 !important; right:-92px;">
 		<ul>
 			<li class="menu1"><a href="/rent/main.do">단기예약</a></li>
 			<li class="menu2"><a href="/rent/rentList">중고차 렌터카</a></li>
@@ -133,6 +177,8 @@
 			</li>
 		</ul>
 	</div>
+</div>
+</div>
 </c:if>
 
 

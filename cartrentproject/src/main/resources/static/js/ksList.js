@@ -187,4 +187,13 @@ document.addEventListener("scroll", function(){ //스크롤 중인 이벤트
 
 
 
+//퀵메뉴 호버
+$('#menuicon').hover(function() {
+	alert("Gd");
+	$(this).prop('checked', true);
+	}, function(){
+		$(this).prop('checked', false);
+});
+
+
 		
