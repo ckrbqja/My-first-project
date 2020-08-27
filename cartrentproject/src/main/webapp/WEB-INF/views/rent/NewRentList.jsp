@@ -229,12 +229,12 @@ var headerMoving = function(direction){
 };
 var prevScrollTop = 0;
 document.addEventListener("scroll", function(){ //스크롤 중인 이벤트
-	var windowHeight = $('[name=orderBy]').offset().top - $('#menuHeader11').height(); // 토탈의 스크롤위치
+	var windowHeight = $('#total').offset().top - $('#menuHeader11').height(); // 토탈의 스크롤위치
 	
 	var scrollValue = $(document).scrollTop();	
 	console.log(windowHeight +"  " + 	scrollValue);	
   	var nextScrollTop = window.pageYOffset || 0; 
-  if (nextScrollTop > prevScrollTop){
+  if (nextScrollTop > prevScrollTop   && scrollValue > windowHeight){
     headerMoving("down"); //스크롤 내리는 중에 실행코드
   } else if (nextScrollTop < prevScrollTop ){
     headerMoving("up"); //스크롤 올리는 중에 실행코드

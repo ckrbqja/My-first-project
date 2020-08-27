@@ -172,7 +172,7 @@ var headerMoving = function(direction){
 var prevScrollTop = 0;
 
 document.addEventListener("scroll", function(){ //스크롤 중인 이벤트
-	var windowHeight = $('[name=orderBy]').offset().top - $('#menuHeader11').height(); ; // 토탈의 스크롤위치
+	var windowHeight = $('#total').offset().top - $('#menuHeader11').height(); ; // 토탈의 스크롤위치
 	var scrollValue = $(document).scrollTop();	
   	var nextScrollTop = window.pageYOffset || 0; 
   	

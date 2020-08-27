@@ -7,6 +7,9 @@
 .aa1:visited{text-decoration: none;}
 .aa2:visited{text-decoration: none;}
 	
+header {transform: initial; position:fixed; }
+header.scrollDown { transform: translate(0, -150px); transition: transform 1s;}
+
 .dropdown-menu li a {color:#333333 !important;}
 
 header img {margin-top:-20px;}
