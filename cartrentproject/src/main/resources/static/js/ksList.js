@@ -158,5 +158,33 @@ $(window).scroll(
 			if(windowHeight < scrollValue) more(bTemp);
 });
 
+//스크롤 내릴시 헤더 가림
+var header = document.querySelector('header');
+var headerMoving = function(direction){
+	
+	
+  if (direction === "up"){
+    header.className = '';
+  } else if (direction === "down"){
+    header.className = 'scrollDown';
+  }
+};
+var prevScrollTop = 0;
+
+document.addEventListener("scroll", function(){ //스크롤 중인 이벤트
+	var windowHeight = $('[name=orderBy]').offset().top - $('#menuHeader11').height(); ; // 토탈의 스크롤위치
+	var scrollValue = $(document).scrollTop();	
+  	var nextScrollTop = window.pageYOffset || 0; 
+  	
+  if (nextScrollTop > prevScrollTop && scrollValue > windowHeight){
+    headerMoving("down"); //스크롤 내리는 중에 실행코드
+  } else if (nextScrollTop < prevScrollTop ){
+    headerMoving("up"); //스크롤 올리는 중에 실행코드
+  }
+  prevScrollTop = nextScrollTop;
+  
+});
+
+
 
 		
