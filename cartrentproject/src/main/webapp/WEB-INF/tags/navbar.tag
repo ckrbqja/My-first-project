@@ -121,31 +121,6 @@
 <!-- header 끝 -->
 
 
-<style>
-* {padding:0;margin:0;}
-input[id="menuicon"] {display:none;}
-input[id="menuicon"] + ul {    position: fixed;
-    top: 170px;
-    right: -50px;
-    width: 92px;
-    height: 458px;
-    z-index: 999999;
-    box-sizing: border-box;}
-input[id="menuicon"] + ul > li {display:block;width:50px;height:50px;border:1px solid #f1f1f1;position:relative;margin-top:-1px;transition:all .35s;}
-input[id="menuicon"] + ul > li > a {display:block;width:auto;height:50px;overflow:hidden;transition:all .35s;}
-input[id="menuicon"] + ul > li > label {display:block;cursor:pointer;width:auto;height:50px;background:#dadada;}
-input[id="menuicon"] + ul > li:nth-child(1) label span {display:block;position:absolute;width:50%;height:3px;border-radius:30px;background:#333;transition:all .35s;}
-input[id="menuicon"] + ul > li:nth-child(1) label span:nth-child(1) {top:30%;left:50%;transform:translateX(-50%);}
-input[id="menuicon"] + ul > li:nth-child(1) label span:nth-child(2) {top:50%;left:50%;transform:translate(-50%,-50%);}
-input[id="menuicon"] + ul > li:nth-child(1) label span:nth-child(3) {bottom:30%;left:50%;transform:translateX(-50%);}
-input[id="menuicon"]:checked + ul > li:nth-child(1) label {z-index:2;right:300px;}
-input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(1) {top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);}
-input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(2) {opacity:0;}
-input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(3) {bottom:50%;left:50%;transform:translate(-50%,50%) rotate(-45deg);}
-
-</style>
-
-
 <!-- 퀵메뉴 메인이 아닐 시 보여짐 -->
 <c:if test="${!fn : contains(URL, 'main') and !fn : contains(URL, 'admin') and !fn : contains(URL, 'accident') and !fn : contains(URL, 'buy/list')}">
 <div id="qMenu">
@@ -170,8 +145,6 @@ input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(3) {bot
 </div>
 </div>
 </c:if>
-
-
 
 
 <c:if test="${!fn : contains(URL, 'main.do')}"> <style>body {margin-top: 100 !important;}</style> </c:if>
@@ -211,5 +184,26 @@ $('#menuHeader11').hover(function() {}, function(){
 	$('.aa1').attr('style','color:white !important; left: auto; right: 50px; text-decoration: none;')
 	$('.aa2').attr('style','color:white !important; left: 40px; width: 100px; text-decoration: none;')
 });
+
 </script>
 </c:if>
+<script type="text/javascript">
+//퀵메뉴 호버
+$('#qMenu').hover(function() {
+	$('#menuicon').prop('checked', true);
+	$('.menuicon').animate({right: '52px'}, 500, 'swing');
+	$('.quick-menu').animate({right: '0px'}, 500, 'swing');
+	}, function(){
+		$('.menuicon').animate({right: '-50px'}, 500, 'swing');
+		$('.quick-menu').animate({right: '-100px'}, 500, 'swing');
+		$('#menuicon').prop('checked', false);
+});
+
+//클릭시 체크가 없을 경우
+function qClick(){
+	if(!$("input:checkbox[id='menuicon']").is(":checked"))
+		$('.menuicon').animate({right: '-50px'}, 500, 'swing');
+		$('.quick-menu').animate({right: '-100px'}, 500, 'swing');
+		$('#menuicon').prop('checked', false);
+}
+</script>
