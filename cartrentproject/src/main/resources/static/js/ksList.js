@@ -244,12 +244,9 @@ jQuery(function($){
     }
 })
 
-function  oms(key){
-	$('input:checkbox[name="as'+key+'"]').prop("checked", true);
-}
-function  oml(key){
-	$('input:checkbox[name="as'+key+'"]').prop("checked", false);
-}
+//호버가  css가 있어서 안됨 
+function  oms(key){$('input:checkbox[name="as'+key+'"]').prop("checked", true);}
+function  oml(key){$('input:checkbox[name="as'+key+'"]').prop("checked", false);}
 
 
 

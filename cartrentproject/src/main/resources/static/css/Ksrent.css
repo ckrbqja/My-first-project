@@ -6992,3 +6992,19 @@ input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(2) {opa
 input[id="menuicon"]:checked + ul > li:nth-child(1) label span:nth-child(3) {bottom:50%;left:50%;transform:translate(-50%,50%) rotate(-45deg);}
 
 
+
+/* 중앙정렬 코드- 삭제하고 사용하세요 */
+.center {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+/* 중앙정렬 코드- 삭제하고 사용하세요 */
+
+.check input {display: none;}
+.check span {display:inline-block;vertical-align:middle;}
+.check .icon {width: 20px;height: 20px;background-color: transparent;position: relative;cursor: pointer;}
+.check .icon::before, .check .icon::after {content:'';display:inline-block;width: 3px;height: 0;background-color: #ff1100;position: absolute;transform-origin:left top;border-radius:5px;}
+.check .icon::before {top: 8px;left: 2px;transform: rotate(-45deg);}
+.check .icon::after {top: 16px;left: 10px;transform: rotate(-135deg);}
+
+.check input:checked ~ .icon {border-color: #ff1100;}
+.check input:checked ~ .icon::before {height: 10px;transition:all .35s ease;}
+.check input:checked ~ .icon::after {height: 24px;transition:all .35s ease .35s;}
+
