@@ -183,7 +183,7 @@ function more(count){
 	searchForm('click');
 }
 
-///footerSHeight값 이상일시 class를 바꾼다
+//footerSHeight값 이상일시 class를 바꾼다
 $(window).scroll(
 		function() {
 			var windowHeight = $(window).height() - window.innerHeight-$('#footer').height(); // Viewport Height
