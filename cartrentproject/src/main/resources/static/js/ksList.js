@@ -155,6 +155,9 @@ $(window).scroll(
 			var windowHeight = $(window).height() - window.innerHeight;
 			var scrollValue = $(document).scrollTop()+10;
 			var bTemp = $('#buTemp').val();
+			var count = $('[name=limit]').val();
+			console.log(count);
+			if(!isNaN(count))
 			if(windowHeight < scrollValue) more(bTemp);
 });
 
