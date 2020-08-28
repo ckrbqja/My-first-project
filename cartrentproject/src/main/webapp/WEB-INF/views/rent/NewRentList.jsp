@@ -23,7 +23,7 @@ header img{margin-top:0px;}
 .user_img { transform:scale(1.0);   transition: transform .5s;}
 *{margin:0;padding:0;}
 .thumb {width:auto;overflow:hidden;padding-bottom:56.25%;position:relative;}
-.desc {display:inline;background: linear-gradient(to right, rgba(255,255,255,0) 50%, #f3ca00 50%);background-size: 200%;background-position: 0 0;transition: .35s ease-in-out;font-size:11px;line-height:1.6;color:#666;word-break:keep-all;}
+.desc {display:inline;background: linear-gradient(to right, rgba(255,255,255,0) 50%, #FFE400 50%);background-size: 200%;background-position: 0 0;transition: .35s ease-in-out;font-size:11px;line-height:1.6;color:#666;word-break:keep-all;}
 .textbox:hover .desc {background-position: -100% 0;}
 .textbox:hover .user_img {   transform:	scale(1.1);   transition: 	transform .2s; }
 </style>
@@ -183,7 +183,7 @@ function more(count){
 	searchForm('click');
 }
 
-//footerSHeight값 이상일시 class를 바꾼다
+///footerSHeight값 이상일시 class를 바꾼다
 $(window).scroll(
 		function() {
 			var windowHeight = $(window).height() - window.innerHeight-$('#footer').height(); // Viewport Height
