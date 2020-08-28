@@ -72,9 +72,9 @@ function searchForm(click){
 		traditional : true,
 		type : 'get',
 		success : function(data){
-			var str = '<div class="result_bigbox" id="result_bigbox_list" style="margin:0px">';
+			var str = '<div class="result_bigbox" id="result_bigbox_list" style="margin:0px" onmouseenter="oms()" onmouseleave="oml()">';
 			$.each(data.rentList, function(key, value){
-				str += '<a href="#"><div class="result_box grid-bottom hideme bottom textbox" onclick="location.href=\'/rent/rentListDetail/'+ value.rent_id +'\'">'+
+				str += '<a href="#"><div name="boX" class="result_box grid-bottom hideme bottom textbox" onclick="location.href=\'/rent/rentListDetail/'+ value.rent_id +'\'">'+
 				'<div class="car-list__sticker joonggo">중고차</div>'+
 			'<div class="result_box_top ">'+
 					'<div class="result_img user_car">'+
@@ -83,7 +83,7 @@ function searchForm(click){
 					'</div>'+
 				'<div class="result_top_right">'+
 					'<p>'+ value.manufacturer +'</p>'+
-					'<p  class="desc" style="width: 200px;">'+ value.car_name +'</p>'+
+					'<p  class="desc" style="width: 200px;"><label class="check" style="margin-left:-20px;"><input id="checkId" type="checkbox" checked><span class="icon" style="bottom:15px;left:9px;"></span></label>'+ value.car_name +'</p>'+
 						'<ul class="sticker_box">'+
 							'<li class="sticker_membership">멤버십</li>'+
 						'</ul>'+
@@ -243,6 +243,14 @@ jQuery(function($){
         })
     }
 })
+
+function  oms(){
+	$('input:checkbox[id="checkId"]').prop("checked", true);
+}
+function  oml(){
+	$('input:checkbox[id="checkId"]').prop("checked", false);
+}
+
 
 
 

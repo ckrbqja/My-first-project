@@ -9,7 +9,20 @@
 <fmt:formatDate value='${now}' pattern='yyyy' var="now"/>
 <html>
 <style>
+/* 중앙정렬 코드- 삭제하고 사용하세요 */
+.center {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+/* 중앙정렬 코드- 삭제하고 사용하세요 */
 
+.check input {display: none;}
+.check span {display:inline-block;vertical-align:middle;}
+.check .icon {width: 20px;height: 20px;background-color: transparent;position: relative;cursor: pointer;}
+.check .icon::before, .check .icon::after {content:'';display:inline-block;width: 3px;height: 0;background-color: #ff1100;position: absolute;transform-origin:left top;border-radius:5px;}
+.check .icon::before {top: 8px;left: 2px;transform: rotate(-45deg);}
+.check .icon::after {top: 16px;left: 10px;transform: rotate(-135deg);}
+
+.check input:checked ~ .icon {border-color: #ff1100;}
+.check input:checked ~ .icon::before {height: 10px;transition:all .35s ease;}
+.check input:checked ~ .icon::after {height: 24px;transition:all .35s ease .35s;}
 
 header {transform: initial; position:fixed; }
 header.scrollDown { transform: translate(0, -150px); transition: transform 1s;}
@@ -97,7 +110,7 @@ header img{margin-top:0px;}
 					<div class="select-col col-3" >
 						<span class="select-box" > 
 							<select style="" name="manufacturer" id="usedCarMakerId" class="select2-selection select2-selection--single option01" onchange="carKind(); searchForm();">
-								<option value="">제조사 선택</option>
+								<option value="">제조사 선택 </option>
 								<c:forEach items="${manufacturer}" var="manufacturer" varStatus="status">
 									<option <c:if test="${ma != null and ma eq manufacturer.manufacturer}"> selected</c:if>>${manufacturer.manufacturer}</option>
 								</c:forEach>
@@ -338,6 +351,10 @@ $('#toptop').click(function() {
 	$('html, body').animate({scrollTop : 0}, 400);
 	return false;
 });
+
+$('.result_bigbox').hover(function() {
+	alert("gd");
+	});
 
 
 </script>
