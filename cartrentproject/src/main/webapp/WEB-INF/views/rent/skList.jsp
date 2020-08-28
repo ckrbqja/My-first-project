@@ -9,6 +9,35 @@
 <fmt:formatDate value='${now}' pattern='yyyy' var="now"/>
 <html>
 <style>
+
+.scrollindicator{
+    width: 100%;
+    height: 7px; /* height of progress bar */
+    display: block;
+    background: white;
+    left: 0;
+    bottom: 0; /* dock progress bar to bottom of page (change to "top" for top instead) */
+    cursor: pointer;
+    position: fixed;
+    z-index: 1000000;
+    visibility: hidden;
+    -webkit-transition: height .2s ease;
+    transition: height .2s ease;
+}
+
+.scrollprogress{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, red, #f68121); /* background color of progress bar */
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+    =-webkit-transition: -webkit-transform .4s ease; 
+    transition: transform .4s ease; /* animate progress bar? Remove to disable */
+}
+
+
+
 header {transform: initial; position:fixed; }
 header.scrollDown { transform: translate(0, -150px); transition: transform 1s;}
 
@@ -250,8 +279,6 @@ header img{margin-top:0px;}
 </div>
 </body>
 <script type="text/javascript">
-
-
 //대여기간
 $('#ex1').on('slide',function(data){
 	$( "#divUsedcarCntrPsblTermAreaValue" ).val(data.value);
@@ -338,6 +365,8 @@ $('#toptop').click(function() {
 	$('html, body').animate({scrollTop : 0}, 400);
 	return false;
 });
+
+
 
 </script>
 </html>
