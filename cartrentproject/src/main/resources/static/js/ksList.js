@@ -194,8 +194,6 @@ document.addEventListener("scroll", function(){ //스크롤 중인 이벤트
 jQuery(function($){
     var growmouseover = [true, '25px'] // magnify progress bar onmouseover? [Boolean, newheight]
 
-///////// No need to edit beyond here /////////
-
     var $indicatorparts = $(document.body).append('<div class="scrollindicator"><div class="scrollprogress"></div></div>')
     var $indicatorMain = $indicatorparts.find('div.scrollindicator')
     var $scrollProgress = $indicatorparts.find('div.scrollprogress')

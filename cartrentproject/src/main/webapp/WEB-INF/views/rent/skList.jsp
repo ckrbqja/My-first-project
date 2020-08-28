@@ -10,33 +10,6 @@
 <html>
 <style>
 
-.scrollindicator{
-    width: 100%;
-    height: 7px; /* height of progress bar */
-    display: block;
-    background: white;
-    left: 0;
-    bottom: 0; /* dock progress bar to bottom of page (change to "top" for top instead) */
-    cursor: pointer;
-    position: fixed;
-    z-index: 1000000;
-    visibility: hidden;
-    -webkit-transition: height .2s ease;
-    transition: height .2s ease;
-}
-
-.scrollprogress{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, red, #f68121); /* background color of progress bar */
-    -webkit-transform: translate3d(-100%,0,0);
-    transform: translate3d(-100%,0,0);
-    =-webkit-transition: -webkit-transform .4s ease; 
-    transition: transform .4s ease; /* animate progress bar? Remove to disable */
-}
-
-
 
 header {transform: initial; position:fixed; }
 header.scrollDown { transform: translate(0, -150px); transition: transform 1s;}
@@ -78,7 +51,7 @@ header img{margin-top:0px;}
 .user_img { transform:scale(1.0);   transition: transform .5s;}
 *{margin:0;padding:0;}
 .thumb {width:auto;overflow:hidden;padding-bottom:56.25%;position:relative;}
-.desc {display:inline;background: linear-gradient(to right, rgba(255,255,255,0) 50%, #f3ca00 50%);background-size: 200%;background-position: 0 0;transition: .35s ease-in-out;font-size:11px;line-height:1.6;color:#666;word-break:keep-all;}
+.desc {display:inline;background: linear-gradient(to right, rgba(255,255,255,0) 50%, #FFE400 50%);background-size: 200%;background-position: 0 0;transition: .35s ease-in-out;font-size:11px;line-height:1.6;color:#666;word-break:keep-all;}
 .textbox:hover .desc {background-position: -100% 0;}
 .textbox:hover .user_img {   transform:	scale(1.1);   transition: 	transform .2s; }
 </style>

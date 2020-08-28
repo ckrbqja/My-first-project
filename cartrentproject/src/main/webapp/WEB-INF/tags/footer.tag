@@ -21,7 +21,7 @@
             <h1>SK렌터카</h1>
             <div class="footer-menu">
              	<ul>
-                    <li><a href="/main">회사소개</a></li>
+                    <li><a href="/main#page4">회사소개</a></li>
                     <li><a href="#">Sales Partner 모집</a></li><!-- /rent/intro/html/sm_info.do -->
                     <li><a href="#">이용약관</a></li>
                     <li><a href="#">개인정보처리방침</a></li>
