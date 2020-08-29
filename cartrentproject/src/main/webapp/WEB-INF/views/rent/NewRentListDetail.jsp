@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html lang="ko"> 
 <head>
+<style>
+.estimate-information__list span {margin-left:5px;}
+</style>
 <%@ include file="NewRentListDetailAction.jsp" %>
 
 <link rel="stylesheet" href="http://localhost:8082/static/css/ss.css" type="text/css" />

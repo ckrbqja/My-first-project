@@ -6977,7 +6977,7 @@ input[id="menuicon"] + ul {    position: fixed;
     right: -50px;
     width: 92px;
     height: 458px;
-    z-index: 999999;
+    z-index: 999;
     box-sizing: border-box;}
 input[id="menuicon"] + ul > li {display:block;width:50px;height:50px;border:1px solid #f1f1f1;position:relative;margin-top:-1px;transition:all .35s;}
 input[id="menuicon"] + ul > li > a {display:block;width:auto;height:50px;overflow:hidden;transition:all .35s;}

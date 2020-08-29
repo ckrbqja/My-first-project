@@ -7,10 +7,6 @@
 <html>
 <head>
 <style>
-/* 중앙정렬 코드- 삭제하고 사용하세요 */
-.center {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
-/* 중앙정렬 코드-삭제하고 사용하세요 */
-
 .checkbox input {display:none;}
 .checkbox span {display:inline-block;vertical-align:middle;cursor:pointer;}
 .checkbox .icon {position:relative;width: 17px;height: 17px;border: 1px solid #c8ccd4;border-radius: 3px;transition: background 0.1s ease;}
@@ -103,11 +99,11 @@ z-index: 10000;
                         </span>
                     </div>
                     <div class="input-row">
-	<label class="checkbox">
-		<input type="checkbox"  id="select-terms3" class="chkuser_id"  name="chkuser_id" class="idchk" >
-		<span class="icon"></span>
-		<span class="text">아이디 저장</span>
-	</label>
+						<label class="checkbox">
+							<input type="checkbox"  id="select-terms3" class="chkuser_id"  name="chkuser_id" class="idchk" >
+							<span class="icon"></span>
+							<span class="text">아이디 저장</span>
+						</label>
                     </div>
                 </div>
                 <div class="join-btn-box btn-box text-c" >
