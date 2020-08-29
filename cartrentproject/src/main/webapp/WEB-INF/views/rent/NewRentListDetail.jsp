@@ -8,9 +8,6 @@
 <!DOCTYPE html>
 <html lang="ko"> 
 <head>
-<style>
-.estimate-information__list span {margin-left:5px;}
-</style>
 <%@ include file="NewRentListDetailAction.jsp" %>
 
 <link rel="stylesheet" href="http://localhost:8082/static/css/ss.css" type="text/css" />
@@ -196,7 +193,7 @@ function colorName(data){
 											</div>
 										<c:forEach items="${color}" var="color" varStatus="status">
 											<div onclick="carSelect('${status.index}'); price();" id="tab-total-estimate-information" class="tab-content c${status.index}"  <c:if test="${status.index != 0}">hidden</c:if> >
-												<div class="estimate-information__listbox scroll" ><!-- scroll 없으면 삭제 -->
+												<div class="estimate-information__listbox scroll" ><!-- sradio__column radio__column--icocroll 없으면 삭제 -->
 													<ul>
 															<li class="estimate-information__list" >
 																<span class="radio v6 clearfix" style="background-color: white;  width: 615px;">
@@ -300,10 +297,10 @@ function colorName(data){
 												<ul id="makerOpt_ul">
 														<li class="estimate-information__list">
 																	<span class="radio v6 clearfix" onclick="btnClick('carOptId0');" style="border: 2px solid #eb444b; background-color: white;"  >
-																		<input type="radio" checked id="carOptId0" name="carOptId0" value="" style="display: none;" />
-						                                                <label for="carOptId0">
+																		<input type="radio" checked id="carOptId0"  name="carOptId0" value="" style="display: none;" />
+						                                                <label for="carOptId0" style="padding-right:0px;">
 							                                                <span class="radio__column radio__column--ico">
-								                                                <span class="ico"></span>
+								                                                <span class="aass"></span>
 							                                                </span>
 							                                                <span class="radio__column radio__column--title" style="width: 80%">파퓰러 패키지,빌트인 캠 패키지</span>
 							                                                <span class="radio__column radio__column--price">5,800,000원</span>
