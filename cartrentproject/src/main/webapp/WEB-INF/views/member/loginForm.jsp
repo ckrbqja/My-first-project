@@ -6,10 +6,64 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+/* 중앙정렬 코드- 삭제하고 사용하세요 */
+.center {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+/* 중앙정렬 코드-삭제하고 사용하세요 */
+
+.checkbox input {display:none;}
+.checkbox span {display:inline-block;vertical-align:middle;cursor:pointer;}
+.checkbox .icon {position:relative;width: 17px;height: 17px;border: 1px solid #c8ccd4;border-radius: 3px;transition: background 0.1s ease;}
+.checkbox .icon::after {content: '';position: absolute;top: 1px;left: 5px;width: 5px;height: 11px;border-right: 2px solid #fff;border-bottom: 2px solid #fff;transform: rotate(45deg) scale(0);transition: all 0.3s ease;transition-delay: 0.15s;opacity: 0;}
+.checkbox .text {margin-left: 5px;}
+
+.checkbox input:checked ~ .icon {border-color: transparent;background: #ff1616;animation: jelly 0.6s ease;}
+.checkbox input:checked ~ .icon::after {opacity: 1;transform: rotate(45deg) scale(1);
+}
+
+@keyframes jelly {
+	from {transform: scale(1, 1);}
+	30% {transform: scale(1.25, 0.75);}
+	40% {transform: scale(0.75, 1.25);}
+	50% {transform: scale(1.15, 0.85);}
+	65% {transform: scale(0.95, 1.05);}
+	75% {transform: scale(1.05, 0.95);}
+	to {transform: scale(1, 1);}
+}
+
+
+img{
+	margin-top:-20px;
+}
+#aaaa{
+	position: fixed;
+	box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 9999px, rgba(0, 0, 0, 0.5) 2px 2px
+		3px 3px;
+	z-index: 10000;
+}
+#loading {
+	
+background-color:red;
+position: fixed; /* */
+width:50000px !important;
+height:50000px !important;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+width: 48%;
+height: 59%;
+z-index: 10000;
+   background: url('http://localhost:8082/static/img/Preloader_5.gif') no-repeat center center;
+}
+.swal2-checkbox input {
+	display:none;
+}
+</style>
 <meta charset="UTF-8">
 <title>솔렌트카 로그인 페이지</title>
 </head>
 <body>
+
 	<c:if test="${sessionScope.id != null and check == 0}">
 		<script type="text/javascript">
 			location.href='${path}/main';
@@ -49,11 +103,11 @@
                         </span>
                     </div>
                     <div class="input-row">
-                        <span id="login-span" class="checkbox">
-                            <input type="checkbox" id="select-terms3" class="chkuser_id"  name="chkuser_id" class="idchk" >
-                            <label for="select-terms3">아이디 저장</label>
-                        </span>
-                        <span id="login_msg" class="msg-txt cl-point1 text-c"></span>
+	<label class="checkbox">
+		<input type="checkbox"  id="select-terms3" class="chkuser_id"  name="chkuser_id" class="idchk" >
+		<span class="icon"></span>
+		<span class="text">아이디 저장</span>
+	</label>
                     </div>
                 </div>
                 <div class="join-btn-box btn-box text-c" >
@@ -72,34 +126,7 @@
 </div>
 	<div id="loading" style="display: none;"> s  	</div>		
 	<div id="aaaa"  style="display: none;"> s  	</div>		
-<style>
-img{
-	margin-top:-20px;
-}
-#aaaa{
-	position: fixed;
-	box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 9999px, rgba(0, 0, 0, 0.5) 2px 2px
-		3px 3px;
-	z-index: 10000;
-}
-#loading {
-	
-background-color:red;
-position: fixed; /* */
-width:50000px !important;
-height:50000px !important;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-width: 48%;
-height: 59%;
-z-index: 10000;
-   background: url('http://localhost:8082/static/img/Preloader_5.gif') no-repeat center center;
-}
-.swal2-checkbox input {
-	display:none;
-}
-</style>
+
 </body>
 <script>
 
