@@ -277,7 +277,7 @@ function colorName(data){
 											</div>
 										</div>
 										<!-- estimate-list__label//end -->
-										<div class="estimate-list__item" id="selMakerOptDiv" >
+										<div class="estimate-list__item" id="selMakerOptDiv" style="font-size: 16;">
 											파퓰러 패키지,빌트인 캠 패키지
 										</div>
 										
@@ -302,7 +302,7 @@ function colorName(data){
 							                                                <span class="radio__column radio__column--ico">
 								                                                <span class="aass"></span>
 							                                                </span>
-							                                                <span class="radio__column radio__column--title" style="width: 80%">파퓰러 패키지,빌트인 캠 패키지</span>
+							                                                <span class="radio__column radio__column--title" style="width: 80%;">파퓰러 패키지,빌트인 캠 패키지</span>
 							                                                <span class="radio__column radio__column--price">5,800,000원</span>
 						                                                </label>
 				                                                	</span>
