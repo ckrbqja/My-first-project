@@ -298,7 +298,7 @@ function colorName(data){
 														<li class="estimate-information__list">
 																	<span class="radio v6 clearfix" onclick="btnClick('carOptId0');" style="border: 2px solid #eb444b; background-color: white;"  >
 																		<input type="radio" checked id="carOptId0"  name="carOptId0" value="" style="display: none;" />
-						                                                <label for="carOptId0" style="padding-right:0px;">
+						                                                <label for="carOptId0" style="padding-right:0px; margin-left:1px;">
 							                                                <span class="radio__column radio__column--ico">
 								                                                <span class="aass"></span>
 							                                                </span>
