@@ -324,9 +324,9 @@ img{
     </div>
     
 </div>
-	<div id="aaaa"  style=" display:;"> s</div>		
+	<div id="aaaa"  style=" display:none;"> s</div>		
 
-<div class="loading-window" style="z-index: 99999; display: ; ">
+<div class="loading-window" style="z-index: 99999; display:none; ">
     <div class="car">
         <div class="strike"></div>
         <div class="strike strike2"></div>
