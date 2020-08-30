@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	selectCar();
+	carKind(); selectCar(); 
 	//시간차를둬야 가능
-	setTimeout(function() {searchForm();}, 60);
+	setTimeout(function() {searchForm();}, 100);
 	
 	$('#ex1').slider({});  //대여기간
 	$("#ex2").slider({});  //월렌탈료
