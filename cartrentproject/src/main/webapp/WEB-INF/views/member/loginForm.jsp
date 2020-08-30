@@ -108,10 +108,8 @@
 }
 
 .loading-window {
-  background: #333;
   border-radius: 6px;
-  border: 3px solid #ffe4e1;
-  color: #ffe4e1;
+  color: #f68121;
   height: 200px;
   left: 50%;
   margin-left: -150px;
@@ -148,8 +146,8 @@
 .car .strike {
   position: absolute;
   width: 11px;
-  height: 1px;
-  background: #ffe4e1;
+  height: 1.5px;
+  background: red;
   animation: strikes 0.2s linear infinite;
 }
 .car .strike2 {
@@ -171,7 +169,7 @@
 .car-detail {
   position: absolute;
   display: block;
-  background: #ffe4e1;
+  background: #f68121;
   animation: speed 0.5s linear infinite;
 }
 .car-detail.spoiler {
@@ -180,8 +178,8 @@
   top: 7px;
   background: none;
   border: 20px solid transparent;
-  border-bottom: 8px solid #ffe4e1;
-  border-left: 20px solid #ffe4e1;
+  border-bottom: 8px solid #f68121;
+  border-left: 20px solid #f68121;
 }
 .car-detail.back {
   height: 20px;
@@ -196,7 +194,7 @@
   left: 12px;
   border-top-left-radius: 30px;
   border-top-right-radius: 45px 40px;
-  border: 4px solid #ffe4e1;
+  border: 4px solid #f68121;
   background: none;
   box-sizing: border-box;
 }
@@ -221,7 +219,7 @@
   top: 20px;
   left: 12px;
   border: 3px solid #333;
-  background: linear-gradient(45deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), linear-gradient(-45deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), linear-gradient(90deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), linear-gradient(0deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), radial-gradient(#ffe4e1 29%, transparent 30%, transparent 50%, #ffe4e1 51%), #333;
+  background: linear-gradient(45deg, transparent 45%, #f68121 46%, #f68121 54%, transparent 55%), linear-gradient(-45deg, transparent 45%, #f68121 46%, #f68121 54%, transparent 55%), linear-gradient(90deg, transparent 45%, #f68121 46%, #f68121 54%, transparent 55%), linear-gradient(0deg, transparent 45%, #f68121 46%, #f68121 54%, transparent 55%), radial-gradient(#f68121 29%, transparent 30%, transparent 50%, #f68121 51%), #333;
   animation-name: spin;
 }
 .car-detail.wheel2 {
@@ -326,9 +324,9 @@ img{
     </div>
     
 </div>
-	<div id="aaaa"  style="display:none;"> s  	</div>		
+	<div id="aaaa"  style=" display:;"> s</div>		
 
-<div class="loading-window" style="z-index: 99999; display: none; ">
+<div class="loading-window" style="z-index: 99999; display: ; ">
     <div class="car">
         <div class="strike"></div>
         <div class="strike strike2"></div>
@@ -343,9 +341,6 @@ img{
         <div class="car-detail wheel wheel2"></div>
     </div>
 
-    <div class="text">
-        <span>Loading</span><span class = "dots">...</span>
-    </div>
 </div>
 </body>
 <script>
