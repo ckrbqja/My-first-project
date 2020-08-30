@@ -280,6 +280,7 @@ $('#ex4').on('slide',function(data){
 
 //제조사 선택
 function selectCar() {
+	searchForm();
 	var car_kind 	 = $('#usedCarSgmntTypeCd').val();
 	var manufacturer = $('#usedCarMakerId').val();
 	if(car_kind == '')
@@ -293,7 +294,7 @@ function selectCar() {
 			var str = '<option value="">차량 선택</option>';
 			$.each(data.map, function(key, value){
 				str += '<option';
-				if(cn.replace(/(\s*)/g, "") === value.car_name.replace(/(\s*)/g, ""))
+				if(cn.replace(/(\s*)/g, "") == value.car_name.replace(/(\s*)/g, ""))
 					str += ' selected ';
 				str += '>'+ value.car_name + '</option>';
 			});
@@ -303,8 +304,9 @@ function selectCar() {
 }
 
 //차량 유형 선택
-function carKind(){
+function carKind(aa){
 	var manufacturer = $('#usedCarMakerId').val();
+	if(aa=='1')
 	var ck = '${ck}';
 	$.ajax({
 		url		: '/rent/carKind',
@@ -321,6 +323,7 @@ function carKind(){
 			});
 			$('#usedCarSgmntTypeCd').html(str);
 			$('#usedCartypeId').html('<option value="">차량 선택</option>')
+			selectCar();
 		},
 		error : function(data){}
 	});

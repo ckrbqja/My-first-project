@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	carKind(); selectCar(); 
+	carKind('1'); selectCar('1'); 
 	//시간차를둬야 가능
 	setTimeout(function() {searchForm();}, 100);
 	
