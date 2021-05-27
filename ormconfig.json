@@ -1,0 +1,10 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3307,
+    "username": "root",
+    "password": "class504!",
+    "database": "sotong",
+    "autoLoadEntities": true,
+    "synchronize": true
+}
